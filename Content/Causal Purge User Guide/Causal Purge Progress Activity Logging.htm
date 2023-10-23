@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Causal Purge Progress/Activity Logging</h1>
+        <p>As previously noted, purge activity data are retained at the end-customer’s discretion.</p>
+        <h2>In-Execution Monitoring</h2>
+        <p>Monitoring of actual progress is only visible via SQL Query for version 1.0.  The inquirer needs to have access to a query execution tool, with read-only permissions to a small set of tables.  Sample queries are provided below, and are basic in nature.  If the purge-volume will be high, set the <code>@ShowDetailLog</code> to 1, and monitor the Completed, Total, and InFlight results.</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">DECLARE @Now           datetime = GETDATE()
+      , @BatchID       int
+      , @ShowDetailLog tinyint  = 1; -- 1 = Batch, 2 = PA, 3 = Detail
+
+SELECT @BatchID = pb.BatchID
+  FROM causal.PurgeBatch pb
+ WHERE pb.RowStatusID = 1;
+/* -----------------------------------------------------------------------------
+** When there's no in-flight Batch, grab the last one
+** -------------------------------------------------------------------------- */
+IF @BatchID IS NULL
+    SELECT @BatchID = MAX( pb.BatchID )
+      FROM causal.PurgeBatch pb;
+/* -----------------------------------------------------------------------------
+** Overall Batch Progress
+** -------------------------------------------------------------------------- */
+SELECT *
+  FROM causal.PurgeBatch                         pb
+       OUTER APPLY ( SELECT Completed = COUNT( pbca.CompletionDate )
+                          , Total     = COUNT( * )
+                       FROM causal.PurgeBatch_Causal pbca
+                      WHERE pbca.BatchID = @BatchID ) p
+       OUTER APPLY ( SELECT InFlight = COUNT( pbca.CoreStepsStartedAt )
+                       FROM causal.PurgeBatch_Causal pbca
+                      WHERE pbca.BatchID = @BatchID
+                        AND pbca.CoreStepsStartedAt IS NOT NULL
+                        AND pbca.CompletionDate IS NULL ) u
+ WHERE pb.BatchID = @BatchID;
+/* -----------------------------------------------------------------------------
+** Overall Causal Progress
+** -------------------------------------------------------------------------- */
+IF @ShowDetailLog &gt; 1
+    SELECT *
+      FROM causal.PurgeBatch_Causal pbc
+     WHERE pbc.BatchID = @BatchID
+     ORDER BY pbc.CausalID;
+/* -----------------------------------------------------------------------------
+** Detailed Causal Step Progress
+** -------------------------------------------------------------------------- */
+IF @ShowDetailLog &gt; 2
+    SELECT *
+      FROM causal.PurgeBatch_Causal_Step pbcs
+     WHERE pbcs.BatchID = @BatchID
+     ORDER BY pbcs.CausalID
+            , pbcs.ExecutionSequenceNumber;
+/* -----------------------------------------------------------------------------
+** Overall Batch Progress - Time-sequenced
+** -------------------------------------------------------------------------- */
+IF @ShowDetailLog &gt; 2
+    SELECT *
+      FROM causal.PurgeLog pl
+     WHERE pl.BatchID = @BatchID
+     ORDER BY pl.BatchID
+            , pl.CreatedWhen
+            , pl.SPID;</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <h2>Post-Execution Log Perusal</h2>
+        <p>With minor modifications to the queries above, any Batch and/or Causal Purge information can be viewed by modifying the <code>BatchID</code> and/or adding <code>CausalID</code> qualification.</p>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../../Resources/TableStyles/standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../../Resources/TableStyles/standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
+    </head>
+    <body>
+        <h1>System Policies</h1>
+        <p>The following system policies have been added. </p>
+        <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/standard.css');" class="TableStyle-standard" cellspacing="0" MadCap:autosort="False">
+            <col class="TableStyle-standard-Column-Column1" style="width: 346px;" />
+            <col class="TableStyle-standard-Column-Column2" style="width: 346px;" MadCap:autosortPriority="0" MadCap:autosortDirection="ascending" />
+            <col class="TableStyle-standard-Column-Column1" style="width: 873px;" />
+            <thead>
+                <tr class="TableStyle-standard-Head-Header1">
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">System Policy</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">System Policy Group</th>
+                    <th class="TableStyle-standard-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">Default: Use Collection For Intra-Style Curve</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">Module: Target Choice Count</td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">If false, then the system will use the variant's style for the intra-style curve, If true, the system will use the variant's placeholder's collection.</td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">Product Model: Time Interval To Skip a Product Model Calculation</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">Module: Product Model</td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">This system policy enables the client to configure the time interval used to determine when to skip a Product Model calculation if it occurred within the specified time limit. Clients can configure this time interval by setting the value of this policy to the desired number of hours. If the value is set to a negative number, the default time interval of 36 hours will be used.</td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">Rationalize: Pareto Threshold</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">Module: Target Choice Count</td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Target Creation - Rationalization Process.  When Comparison Active variants are sorted by productivity in descending order, the variant that causes the cumulative sum to meet this percent of total is the Pareto Choice Count.  For example, if the Pareto Threshold is 95%, and when rationalizing, the 37th variant has a cumulative productivity that is 95.4% of total productivity, the system will determine 37 as the Pareto Choice Count. Formatted as a decimal (e.g. 0.95 = 95%).</td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyB-Column1-Body1">Time Since Last Allocation Strategy Inventory Cache Calculation for Batch Exclusion</td>
+                    <td class="TableStyle-standard-BodyB-Column2-Body1">Module: Allocation</td>
+                    <td class="TableStyle-standard-BodyA-Column1-Body1">This system policy enables the client to configure the time interval used to determine when to skip an Allocation Strategy Inventory Cache calculation if it occurred within the specified time limit. Clients can configure this time interval by setting the value of this policy to the desired number of hours. If the value is set to a negative number, the default time interval of 18 hours will be used.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p MadCap:conditions="General.DoNotPublish">The following system policies have been deprecated: </p>
+    </body>
+</html>

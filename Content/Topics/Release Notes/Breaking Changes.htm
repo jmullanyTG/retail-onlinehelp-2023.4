@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Breaking Changes</h1>
+        <h2>Allocations</h2>
+        <p>The Rebuild Forecast code for cachefields update procedure has been removed. This removal should have no effect as direct calls were False and the nightly batch, with True, didn't call the Rebuild Forecast code at all. The cache manager will NO longer allow the Rebuild Forecast to be set to True. Logic has been added to call a new Batch Exclusion procedure.</p>
+    </body>
+</html>

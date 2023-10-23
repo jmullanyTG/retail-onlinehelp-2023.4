@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Aggregation levels and top down planning</h1>
+        <p>Users can experience a slowdown when working with large volumes of data, whether it consists of many months, channels, product categories, or a combination of all these. </p>
+        <p>Aggregation levels limit the number of data rows the system must work with and display by pre-aggregating data below the selected level. In a top down planning environment, these can be utilized to great advantage by taking a tiered approach to working on plans:</p>
+        <p class="BasicNote">For more information regarding the <span class="Emphasis">Product Agg Level</span> parameter, see <MadCap:xref href="Parameters.htm">Plan parameters</MadCap:xref>.</p>
+        <p>
+            <img src="../../Resources/Images/MFP/Practical Application_2_2.png" class="LargeImages">
+            </img>
+        </p>
+        <p>In the above example with the <span class="Emphasis">Product Agg Level</span> set to <span class="Emphasis">Category</span>, the <span class="Emphasis">Product Level Description</span> pivot field shows Polo (5/5). This indicates there are 5 Brands beneath the Polo product category and the view is currently aggregating data from all of them.</p>
+        <p>
+            <img src="../../Resources/Images/MFP/Practical Application_2_3.png" class="LargeImages">
+            </img>
+        </p>
+        <p>By unchecking one of the Brands in the <span class="Emphasis">Product</span> parameter dropdown and re-executing the view, the <span class="Emphasis">Product Level Description</span> now reads Polo (4/5). This indicates data for only 4 of the 5 total levels is aggregated in the view.</p>
+        <p>
+            <img src="../../Resources/Images/MFP/Practical Application_2_4.png" class="LargeImages">
+            </img>
+        </p>
+        <p>By adopting a systematic approach, an optimal system performance can be maintained while working on progressively more granular levels of the plan. In the above example, the aggregation level has changed to Brand so work can be performed on the details of each Brand beneath the Polo category.</p>
+        <p>
+            <img src="../../Resources/Images/MFP/Practical Application_2_5.png" class="LargeImages">
+            </img>
+        </p>
+        <p>Locking functionality constrains changes made at the Brand level to the values planned at the Category level. For more information, see <MadCap:xref href="Lock Spread.htm">Lock &amp; Spread.</MadCap:xref></p>
+    </body>
+</html>

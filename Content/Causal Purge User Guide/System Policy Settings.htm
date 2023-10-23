@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>System Policy Settings</h1>
+        <p>There are three system policy tokens specific to the Causal Purge utility.</p>
+        <h2>causal.PurgeLimitPerRun</h2>
+        <p>In order to minimize duration, until experience has been gained that shows that more than the default 200 Causals can be purged in a single run, we have erred on the side of caution in establishing the default value.  The value can raised or lowered at will.</p>
+        <h2>causal.PurgeDeadlockRetryLimit</h2>
+        <p>Given the parallel execution nature of the utility, we seek to minimize the possibility of having to stop the process due to excessive SQL Server DEADLOCK occurrences, measured against what could be a very low standard setting of 3 retries.  The Purge Utility is set to retry up to 30 times.  Lowering this count is deemed detrimental and unnecessary.  It can be raised at will.</p>
+        <h2>causal.PurgeRetentionDays</h2>
+        <p>It is incumbent upon the implementation team to adjust this value at will.  The data retained are the Purge table content, starting at Purge_Batch, and affecting each child table, and is for an entire batch, irrespective of the earliest start date-time of any Purge Step – retention starts from the date-time the Batch was last modified.  Deletion of a Causal using the UI is at the discretion of the Customer.</p>
+    </body>
+</html>
