@@ -3,7 +3,7 @@
     <head>
     </head>
     <body>
-        <p>The <span class="Emphasis">Target Choice By Update</span> view lets users select which segments and locations to view.  </p>
+        <p>The <span class="Emphasis">Target Choices By Update</span> view lets users select which segments and locations to view.  </p>
         <p>
             <img src="../Images/Target Choice Count/Target Choice By Update.png" class="LargeImages" />
         </p>

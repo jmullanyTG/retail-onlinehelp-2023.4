@@ -151,7 +151,7 @@ Displays the rows removed from the cleansing process.				 <p><img src="../Images
             <li>Period Data Fields: Integer or currency (depending on Sales Basis of units or revenue). The deseasonalized sales per period that occurred in the corresponding cluster for the variant.</li>
         </ul>
         <h3>View Choices By Update</h3>
-        <p>Displays the <span class="Emphasis">Target Choice By Update</span> view allowing users to select which segments and locations to view.  Clicking <span class="Emphasis">Sum Locations</span> lets users sum locations.  When checked, the data shown is collapsed to show choices across all selected locations. When unchecked, specific values are broken out for the selected locations.</p>
+        <p>Displays the <span class="Emphasis">Target Choices By Update</span> view allowing users to select which segments and locations to view.  Clicking <span class="Emphasis">Sum Locations</span> lets users sum locations.  When checked, the data shown is collapsed to show choices across all selected locations. When unchecked, specific values are broken out for the selected locations.</p>
         <p>
             <img src="../Images/Target Choice Count/Target Choice By Update.png" class="LargeImages" />
         </p>
