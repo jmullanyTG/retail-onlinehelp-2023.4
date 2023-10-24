@@ -5,7 +5,7 @@
   Host=""
   User="MyAccountId"
   Password=""
-  Directory="C:\Users\jmullany.TOOLS\Desktop\PublishedPDFs"
+  Directory="C:\Users\JMullany\OneDrive - ToolsGroup\Desktop\PublishedPDFs"
   Port=""
   ViewUrl="http://www.madcapsoftware.com/"
   Type="file"

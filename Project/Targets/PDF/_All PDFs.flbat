@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <CatapultBatchTarget
   Version="1"
   Comment="New Batch Target"
@@ -10,419 +10,362 @@
       Type="HTML5"
       Build="false"
       Publish="false"
-      LastBuilt="2023-04-20T13:35:07.2001454-04:00" />
+      LastBuilt="2023-10-24T09:24:47.7306361-04:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Demand Mgmt non-Help requests/Testing Target"
-      Type="Word"
+      Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2022-08-23T15:25:58.2442390-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Diamond Chart 2019x - 2021x"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-01-20T09:52:40.5715408-05:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="Diamond Chart 2022x - 2023x"
       Type="PDF"
       Build="false"
       Publish="false"
-      LastBuilt="2023-04-19T14:39:27.6118837-04:00" />
+      LastBuilt="2023-10-23T13:53:44.3626724-04:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Adaptive Allocations"
       Type="PDF"
-      Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:22:12.1504206-04:00" />
+      Build="true"
+      Publish="true"
+      LastBuilt="2023-10-24T10:17:11.4286419-04:00" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Administrator Panel"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:22:40.3106949-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Allocation Size"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:23:12.4894873-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Allocations"
       Type="PDF"
-      Build="true"
-      Publish="true"
-      LastBuilt="2023-04-17T14:24:55.0384322-04:00" />
+      Build="false"
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Allocations Rules Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:25:26.0372513-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Assortment Planning"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:31:48.3474399-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Attribute Management"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:27:30.2916854-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Broker Dispatch"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:27:49.4696528-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Causals"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:28:09.0438294-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Classification"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:28:25.3842906-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Cluster Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:28:39.4240725-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Content Manager"
       Type="PDF"
-      Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:29:25.5488968-04:00" />
+      Build="true"
+      Publish="true" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Currency and VAT Management"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:29:50.9313699-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Curves"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:30:18.2398515-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Dashboard"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:30:43.7479992-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Demand Forecasting"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:32:27.9087123-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Demand Transfer"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:32:01.0911647-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Events"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:34:21.8040764-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Files"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:32:44.2156687-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Filters"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:32:59.7970948-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Forecast Definition"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:33:33.7631990-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Glossary"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-02-23T12:05:27.8165201-05:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Group Forecasts"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:34:02.0737860-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/GVCMS"
-      Type="PDF"
+      Type="Word"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:34:17.8465908-04:00" />
-    <Target
-      Icon="System.Drawing.Bitmap"
-      Name="PDF/Module Groups &amp; Sub Categories"
-      Type="PDF"
-      Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:34:33.1905447-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Inventory Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:35:22.1014206-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Job Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:34:58.6126428-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Languages"
       Type="PDF"
-      Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:35:17.3754360-04:00" />
+      Build="true"
+      Publish="true" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Media Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:35:37.0042308-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Merchandise Financial Planning"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:40:17.4238079-04:00" />
+      Publish="false" />
+    <Target
+      Icon="System.Drawing.Bitmap"
+      Name="PDF/Module Groups &amp; Sub Categories"
+      Type="PDF"
+      Build="false"
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Notifications"
-      Type="PDF"
+      Type="Word"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:36:08.5140562-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Order Manager"
       Type="PDF"
-      Build="true"
-      Publish="true"
-      LastBuilt="2023-04-17T14:37:10.7469633-04:00" />
+      Build="false"
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Ordering Constraints"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:37:28.3727842-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Policy"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:38:11.3301105-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Price Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:39:34.7605618-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Price Matrix"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:39:47.1285556-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Profiles"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:40:32.9612330-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Promotion Management"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:42:13.2018924-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Rate of Sale Calculator"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:41:00.2553929-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Release Notes"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-01-23T12:21:27.1419085-05:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Schedules"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:41:21.0688775-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Site Clustering"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:42:00.2033066-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Site Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:42:47.5610963-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Supersessions"
-      Type="PDF"
+      Type="Word"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:42:32.9742790-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Supplier"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:42:46.5040744-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Supply Chain"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:43:22.5917585-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/System Policy"
       Type="PDF"
-      Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:43:04.3162705-04:00" />
+      Build="true"
+      Publish="true" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Target Choice Count"
-      Type="PDF"
+      Type="Word"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:43:44.6845108-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Time Frames"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:43:42.3613619-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Users"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:46:45.7648308-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Variant Customer Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:43:54.8287795-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Variant Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:44:14.3734132-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Variant Site Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:44:31.9633387-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Views"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:45:40.5752045-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Workflow Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:46:09.3565982-04:00" />
+      Publish="false" />
     <Target
       Icon="System.Drawing.Bitmap"
       Name="PDF/Workload Queue Manager"
       Type="PDF"
       Build="false"
-      Publish="false"
-      LastBuilt="2023-04-17T14:46:36.1743065-04:00" />
+      Publish="false" />
   </Targets>
 </CatapultBatchTarget>
