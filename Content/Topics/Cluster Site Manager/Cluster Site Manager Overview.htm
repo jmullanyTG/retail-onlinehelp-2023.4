@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us">
     <head>
         <link href="../../Resources/TableStyles/standard.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
@@ -70,7 +70,7 @@
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Cluster Set Snapshots and Event Management</td>
                     <td class="TableStyle-standard-BodyD-Column2-Body1">
                      
-                        Cluster set snapshots save the cluster set and associated site configured cluster with an effective start date. The effective start date is used in the Event Management solution to determine if it can be used during the time frame of the event. There must be at least one day overlap, with the Event, for the cluster set snapshot to be available. 
+                        Cluster set snapshots save the cluster set and associated site configured cluster with an effective start date. The effective start date is used in Event Management to determine if it can be used during the time frame of the event. There must be at least a one day overlap with the event for the cluster set snapshot to be available. 
                         <p>Over time, site clustering needs to be modified. When a new snapshot is created with a new effective start date, an end date will be in effect for the original snapshot and Event Management will no longer make it available to events that are configured out of its time frame. 
                     </p></td>
                 </tr>
@@ -78,7 +78,7 @@
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Cluster Set Snapshots and Promotion Management</td>
                     <td class="TableStyle-standard-BodyD-Column2-Body1">
                        
-                        Cluster set snapshots save the cluster set and associated site configured cluster with an effective start date. The effective start date is used in the Promotion Management solution to determine if it can be used during the time frame of a Promotion. There must be at least one day overlap with a Promotion for the cluster set snapshot to be available. 
+                        Cluster set snapshots save the cluster set and associated site configured cluster with an effective start date. The effective start date is used in Promotion Management to determine if it can be used during the time frame of a promotion. There must be at least one day overlap with a promotion for the cluster set snapshot to be available. 
                         <p>Over time, site clustering needs to be modified. When a new snapshot is created with a new effective start date, an end date is in effect for the original snapshot and it is no longer available to Promotions that are configured out of its time frame. 
                     </p></td>
                 </tr>
@@ -93,8 +93,8 @@
                     <td class="TableStyle-standard-BodyB-Column1-Body1">Clustering and Qualitative Criteria</td>
                     <td class="TableStyle-standard-BodyA-Column2-Body1">
                        
-                        Because the k-cluster type algorithms used for clustering in Cluster Site Manager do not to work with non-numeric data points, attributes with qualitative criteria cannot be specified as explicit conditions when creating cluster sets.  
-                        <p>There are two options when needing to cluster based on qualitative criteria: 
+                        Because the k-cluster type algorithms used for clustering in Cluster Site Manager do not work with non-numeric data points, attributes with qualitative criteria cannot be specified as explicit conditions when creating cluster sets.  
+                        <p>There are two options when  clustering based on qualitative criteria: 
                         </p><ol style="list-style-type: lower-alpha;"><li><p>Specify the criteria as Partition By parameters during cluster set configuration. For more information, see <a href="Configuring cluster collection  sets.htm">Cluster set configuration</a>. </p><p>This creates separate cluster sets for each value that exists for the selected Partition By attribute, yielding the same number of total clusters as the likely desired outcome.</p></li><li>Create and assign site attribute values to the stores to cluster that are numeric equivalents or indicators of the desired qualitative criteria. This creates a single cluster set that (potentially) ranks stores into more granular clusters, depending on the number of clusters specified.
 </li></ol><p>Rather than specifying store capacity as High, Medium, and Low, specify square footage values  assigned by store, or numeric minimum or median values can be assigned for each desired tier (High = 20,000, Medium = 14,000, and Small = 8,000).</p><p>There may be unpredictable results if this method is used, depending on the specific numeric values used for the qualitative criteria equivalents, the degree of separation between each, and how those interact with the quantitative data points in the set. </p><p>For example, if clustering on sales volume and average temperature, stores with high sales volume and a low average temperature could be assigned to a cluster that was intended for low to mid sales volume and high average temperature. </p><p>This method is unclear as to the specific intent of the criteria. Consequently, the system  mathematically resolves the criteria for the purpose of ranking.</p></td>
                 </tr>
