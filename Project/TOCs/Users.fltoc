@@ -87,7 +87,7 @@
           Link="/Content/Topics/Users/Curves.htm" />
         <TocEntry
           Title="[%=System.LinkedTitle%]"
-          Link="/Content/Topics/Users/Customer Account Manager.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+          Link="/Content/Topics/Users/Customer Manager.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
         <TocEntry
           Title="[%=System.LinkedTitle%]"
           Link="/Content/Topics/Users/Dashboard.htm" />
