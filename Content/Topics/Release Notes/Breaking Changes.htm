@@ -4,7 +4,8 @@
     </head>
     <body>
         <h1>Breaking Changes</h1>
-        <h2>Allocations</h2>
-        <p>The Rebuild Forecast code for cachefields update procedure has been removed. This removal should have no effect as direct calls were False and the nightly batch, with True, didn't call the Rebuild Forecast code at all. The cache manager will NO longer allow the Rebuild Forecast to be set to True. Logic has been added to call a new Batch Exclusion procedure.</p>
+        <h2>Assortment Planning and Target Choice Count</h2>
+        <h3>Aggregation changes to TY Act New Choice Count applying values across clusters evenly</h3>
+        <p>Choice Count Aggregations in the Target Worksheet are no longer verifiable within the worksheet itself; the totals represent at true unique count of variants across segments, updates, and location. The unique counts can be verified by data in the Data Cleansing and Choices By Update reports.</p>
     </body>
 </html>
