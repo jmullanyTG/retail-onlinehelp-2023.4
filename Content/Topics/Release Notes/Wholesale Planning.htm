@@ -4,6 +4,26 @@
     </head>
     <body>
         <h1>Wholesale Planning</h1>
+        <p>When customers are managing wholesale accounts, they have one account that can have it’s demand split between multiple DCs. This functions similarly to TG JE's demand transference, though the accounts transfer their sales into DCs and not stores. An account’s demand aggregates to a DC only.</p>
+        <p>Wholesale accounts don’t have sales history, but uses sell-ins (customer orders) as sale history for forecast.
+
+How wholesale planners manage these wholesale accounts is by grouping multiple Customer sell-ins together into major Accounts and only Forecast and Replenish those major Accounts. For example,</p>
+        <ul>
+            <li>
+                <p>Vandelay Industries (the primary wholesale account)</p>
+                <ul>
+                    <li>
+                        <p>BrandA</p>
+                    </li>
+                    <li>
+                        <p>BrandB</p>
+                    </li>
+                    <li>
+                        <p>BrandC</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
         <h2>Wholesale Planning</h2>
         <h3>Using customer orders as sales history for Customers <MadCap:conditionalText MadCap:conditions="General.DoNotPublish">DMDEV-88190</MadCap:conditionalText></h3>
         <p>A new weekly task, <span class="Emphasis">(WS) (Weekly) Generate Sales History from Customer Orders</span>, uses customer orders that happened in the past as sales history if the customer order went to an account. The relationships defined in Customer Manager determine how Customer data rolls into which accounts.</p>
@@ -19,7 +39,8 @@
         <p>A new system policy <span class="Emphasis">Site Wholesale Account Distribution: ItemMaster Hierarchy ID</span> defines the hierarchy used. (For more information, see the <cite>System Policies</cite> section.)</p>
         <p>New job task <span class="Emphasis">(WS) (Weekly) Calculate Source Site Percent Contribution for Accounts</span></p>
         <h2>Customer Manager</h2>
-        <p>For TG JE v2023.4, the Customer Account Manager was renamed Customer Manager to reflect updates that support Wholesale planning. The enhanced functionality means sites can be set up as an account and displayed using the <span class="Emphasis">Account</span> site type in Site Manager. Users then maintain the Customer entity and do the linking in Customer Manager. Within Customer Manager, the site represents the account with customers rolling up into accounts. Customers are grouped 1 to 20 like other entities that can be used to show a hierarchy.</p>
+        <p>For TG JE v2023.4, the Customer Account Manager module was renamed Customer Manager to reflect updates that support Wholesale planning. The enhanced functionality means sites can be set up as an account and displayed using the <span class="Emphasis">Account</span> site type in Site Manager. For example, </p>
+        <p>Users then maintain the Customer entity and do the linking in Customer Manager. Within Customer Manager, the site represents the account with customers rolling up into accounts. Customers are grouped 1 to 20 like other entities that can be used to show a hierarchy.</p>
         <p>Two new fields <span class="Emphasis">Account Name</span> and <span class="Emphasis">Location Count</span> located under the <span class="Emphasis">Customer Account</span> group can be added to the top grid in the Customer Manager Document. Both fields are editable and have the <span class="Emphasis">Multiple Changes</span> right-click menu option. The value in the <span class="Emphasis">Location Count</span> field can be used within Assortment Planning.</p>
         <h2>Merchandise Financial Planning</h2>
         <p>Wholesale has been added as a Channel within MFP, with the ability to add sub-channel hierarchies beneath Wholesale for used for individual plans by account.</p>
