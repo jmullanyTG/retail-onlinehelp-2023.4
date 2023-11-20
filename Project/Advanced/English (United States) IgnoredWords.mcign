@@ -166,5 +166,6 @@
     <Word Comment="">BOMC2</Word>
     <Word Comment="">BOMC1</Word>
     <Word Comment="">Ecom</Word>
-    <Word>DMDEV-88190</Word>
+    <Word Comment="">DMDEV-88190</Word>
+    <Word>DMDEV-87190</Word>
 </IgnoredWordsDictionary>

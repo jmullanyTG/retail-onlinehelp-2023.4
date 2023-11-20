@@ -8,6 +8,9 @@
         <p>Significant performance gains have been realized throughout the application with the reduction of response times and the elimination of performance degradation. Improvements include the following:</p>
         <ul>
             <li>
+                <p><span class="Emphasis">Allocation</span> - Improved Engine Ordering indexing to reduce post process elapsed times in Allocations.</p>
+            </li>
+            <li>
                 <p><span class="Emphasis">Allocation</span>, <span class="Emphasis">Assortment</span>, <span class="Emphasis">Curves</span> - Indexing and SQL improvements have been made to multiple procedures to optimize the Weekly Curve Tag Maintenance process.</p>
             </li>
             <li>
@@ -21,6 +24,12 @@
             </li>
             <li>
                 <p><span class="Emphasis">MFP</span> - Performance tuning to the Inventory-Level Cache maintenance process. Specifically to procedure usp_FinancialPlan_Maintenance_Hybrid_SiteLevelContribution.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">MFP</span> - An issue specific to the HRDM plan type that led to a long running cell update has been resolved. <MadCap:conditionalText MadCap:conditions="General.DoNotPublish">DMDEV-87190</MadCap:conditionalText></p>
+            </li>
+            <li>
+                <p><span class="Emphasis">Price Manager</span> - Improved Index usability for Price Caching performance.</p>
             </li>
             <li>
                 <p><span class="Emphasis">Workload Queue</span> - Index improvements made to further the performance of processqueue.Queued_Items.</p>

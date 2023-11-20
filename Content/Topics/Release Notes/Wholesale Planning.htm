@@ -28,6 +28,9 @@ These wholesale accounts are managed by grouping multiple sell-ins together into
         <h3>Using customer orders as sales history for Customers <MadCap:conditionalText MadCap:conditions="General.DoNotPublish">DMDEV-88190</MadCap:conditionalText></h3>
         <p>A new weekly task, <span class="Emphasis">(WS) (Weekly) Generate Sales History from Customer Orders</span>, uses customer orders that happened in the past as sales history if the customer order went to an account. The relationships defined in Customer Manager determine how Customer data rolls into which accounts.</p>
         <p class="BasicNote">Customer orders with dates in the future are ignored.</p>
+        <h2>Site Clustering</h2>
+        <p>There is a new Cluster Type in the Site Clustering Module labeled <span class="Emphasis">Wholesale Account Cluster</span>. How sites are selected remains unchanged and is the same as with the other previously existing Cluster Types. Users do not select or create Clusters within the UI as these are automatically created within the import process. However, users will need to open new Wholesale Account Cluster sets and click <span class="Emphasis">Calculate</span> to assign the correct Clusters. Snapshots continue as normal.</p>
+        <p>Editing a Cluster Set will show the Classifications created.</p>
         <h2>Site Manager</h2>
         <h3>Reviewing the customers under an Account site type</h3>
         <p>Wholesale planners can, when managing wholesale accounts,  see the customer names for sites of type <span class="Emphasis">Account</span> by selecting a new widget <span class="Emphasis">Site Account Customer Relations</span>. The customer names are read-only as changes to the Customer Account relationship are performed done in Customer Manager.</p>
