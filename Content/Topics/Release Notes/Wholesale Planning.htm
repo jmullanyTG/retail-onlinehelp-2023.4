@@ -33,11 +33,11 @@ These wholesale accounts are managed by grouping multiple sell-ins together into
         <p>Editing a Cluster Set will show the Classifications created.</p>
         <h2>Site Manager</h2>
         <h3>Reviewing the customers under an Account site type</h3>
-        <p>Wholesale planners can, when managing wholesale accounts,  see the customer names for sites of type <span class="Emphasis">Account</span> by selecting a new widget <span class="Emphasis">Site Account Customer Relations</span>. The customer names are read-only as changes to the Customer Account relationship are performed done in Customer Manager.</p>
+        <p>Wholesale planners can, when managing wholesale accounts,  see the customer names for sites of type <span class="Emphasis">Account</span> by selecting a new widget <span class="Emphasis">Site Account Customer Relations</span>. The customer names are read-only as changes to the Customer Account relationship are performed in Customer Manager.</p>
         <p class="BasicNote">Sites that are not of site type Account do not display any results.</p>
         <h3>Splitting Account demand into different DCs</h3>
         <p>A new widget labeled <span class="Emphasis">Site Account Source Site Contribution</span> displays a cross product of items in the hierarchy and all DCs. This widget lets users review the default contribution factor (or split percentage) derived from past customer imports and override the default contributions on  particular hierarchy level as desired. However, an override itself cannot be overridden. </p>
-        <p>After a user enters a value in the <span class="Emphasis">Override</span> field and clicks <span class="Emphasis">Save</span>, the <span class="Emphasis">Clear Override</span> field for that row is formatted orange. The Clear Override functionality clears overrides for all the DCs for the item. When overrides are cleared the default contribution percentage is used.</p>
+        <p>After a user enters a value in the <span class="Emphasis">Override</span> field and clicks <span class="Emphasis">Save</span>, the <span class="Emphasis">Clear Override</span> field for that row is formatted orange. The <span class="Emphasis">Clear Override</span> functionality clears overrides for all the DCs for the item. When overrides are cleared the default contribution percentage is used.</p>
         <p class="BasicNote">If 10,000 units have a 50/50 split between 2 DCs out of a total of 4 DCs, then 5,000 units are sent to each of the 2 DCs.</p>
         <p>A new system policy <span class="Emphasis">Site Wholesale Account Distribution: ItemMaster Hierarchy ID</span> defines the hierarchy used. (For more information, see the <cite>System Policies</cite> section.)</p>
         <p>New job task <span class="Emphasis">(WS) (Weekly) Calculate Source Site Percent Contribution for Accounts</span></p>
@@ -46,7 +46,7 @@ These wholesale accounts are managed by grouping multiple sell-ins together into
         <p>Users then maintain the Customer entity and do the linking in Customer Manager. Within Customer Manager, the site represents the account with customers rolling up into accounts. Customers are grouped 1 to 20 like other entities that can be used to show a hierarchy.</p>
         <p>Two new fields <span class="Emphasis">Account Name</span> and <span class="Emphasis">Location Count</span> located under the <span class="Emphasis">Customer Account</span> group can be added to the top grid in the Customer Manager Document. Both fields are editable and have the <span class="Emphasis">Multiple Changes</span> right-click menu option. The value in the <span class="Emphasis">Location Count</span> field can be used within Assortment Planning.</p>
         <h2>Merchandise Financial Planning</h2>
-        <p>Wholesale has been added as a Channel within MFP, with the ability to add sub-channel hierarchies beneath Wholesale for used for individual plans by account.</p>
+        <p>Within MFP, TG JE v2023.4 introduces a new Channel labeled <span class="Emphasis">Wholesale</span>, with the ability to add sub-channel hierarchies beneath <span class="Emphasis">Wholesale</span> for use in individual plans by account.</p>
         <h3>Include Wholesale Totals in Hierarchy</h3>
         <p>If the desired functionality is to include wholesale accounts in MFP, but not plan them individually, then all that is necessary is to include the Channel group in the MFP hierarchy configuration. Then Wholesale will be available when hierarchies are generated.</p>
         <h3>Include Individual Wholesale Accounts in Hierarchy</h3>
@@ -69,7 +69,7 @@ These wholesale accounts are managed by grouping multiple sell-ins together into
                 </p>
             </li>
         </ol>
-        <p>Users will be able to view individual Wholesale Accounts in the MFP hierarchy:</p>
+        <p>Users can then view individual Wholesale Accounts in the MFP hierarchy:</p>
         <p>
             <img src="../../Resources/Images/Wholesale Planning/View Wholesale Accounts Maintain Financial Plan.PNG" class="LargeImages" />
         </p>

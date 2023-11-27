@@ -41,16 +41,10 @@
         Link="/Content/Topics/Release Notes/Wholesale Planning.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
-        Link="/Content/Topics/Release Notes/Allocation.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
         Link="/Content/Topics/Release Notes/Assortment Planning.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Topics/Release Notes/Merchandise Financial Planning.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
-      <TocEntry
-        Title="[%=System.LinkedTitle%]"
-        Link="/Content/Topics/Release Notes/Price Manager.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
         Link="/Content/Topics/Release Notes/Target Choice Count.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
@@ -150,6 +144,9 @@
               <TocEntry
                 Title="[%=System.LinkedTitle%]"
                 Link="/Content/Topics/Merchandise Financial Planning/Plan Sub Types.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+              <TocEntry
+                Title="[%=System.LinkedTitle%]"
+                Link="/Content/Topics/Merchandise Financial Planning/Including Wholesale In Channel Hierarchy.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
               <TocEntry
                 Title="[%=System.LinkedTitle%]"
                 Link="/Content/Topics/Merchandise Financial Planning/Validating a Supply Chain.htm" />
@@ -2708,6 +2705,9 @@
             <TocEntry
               Title="[%=System.LinkedTitle%]"
               Link="/Content/Topics/Site Manager/Splitting Account Demand.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+            <TocEntry
+              Title="[%=System.LinkedTitle%]"
+              Link="/Content/Topics/Site Manager/Reviewing Customers Under Account Type.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
           </TocEntry>
           <TocEntry
             Title="[%=System.LinkedTitle%]"
