@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Forecasts</h1>
+        <h2>Using AI/ML forecasted values to build MFP plans </h2>
+        <p>MFP forecasting creates a forecast at the lowest MFP hierarchy level. Meaning, for an MFP plan that includes Mens &gt; Mens Tops &gt; Mens Tees &gt; Mens Graphic Tees, with graphic tees being the lowest product level, then the forecast runs using the graphic tees grouping as the forecast source. This allows for a forecast to be generated based on product level history and projections and not tied to specific skus/locations. In addition to LY, LLY or a defined comparison time period, planners now has visibility to a sales projection as run through the forecast engine. The forecast results are the winning forecast method from the forecast tournament with LightGBM (AI/ML) included in that forecast tournament</p>
+        <h3>Running forecasts for a plan or for all plans</h3>
+        <p>A new type of forecast type, <span class="Emphasis">Merchandise Financial Plan Forecast Engine Task</span>, has been developed that generates forecasts at a financial plan level and that does not go down to the inventory level. The forecasts can be generated for particular merchandise financial plans (MFP) or for all plans with users having the ability to specify which forecast parameters an MFP plan or all the MFP master plans should run under.  </p>
+        <p>
+            <img src="../../Resources/Images/Job Manager/MFP Forecast Task.png" class="LargeImages" />
+        </p>
+        <p>To generate forecasts for particular plans or to run a forecast for all plans, click <span class="Emphasis">Add</span> to create a new task and select the appropriate option from the dropdown menu in the <span class="Emphasis">MFP Plan</span> field on the <span class="Emphasis">Forecast Task</span> dialog or click <span class="Emphasis">Edit</span> next to the <span class="Emphasis">Engine Task</span> field to update an existing task.</p>
+        <h3>MFP forecast frequency</h3>
+        <p>The MFP forecast frequency can be configured to run on a schedule such as weekly or monthly using two new job manager tasks. These tasks need to be configured so that TG JE's implementation of Gradient Boosting can analyze MFP plan level data.</p>
+    </body>
+</html>
