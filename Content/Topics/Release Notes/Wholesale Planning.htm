@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <head>
+        <link href="../../Resources/TableStyles/standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
     </head>
     <body>
         <h1>Wholesale Planning</h1>
@@ -103,10 +104,219 @@ These wholesale accounts are managed by grouping multiple sell-ins together into
         <p>
             <img src="../../Resources/Images/Wholesale Planning/Sites and Customer Accounts Mixed.png" class="LargeImages" />
         </p>
+        <h2>Inventory Manager</h2>
+        <p>Wholesale Accounts can be easily identified within an Inventory Manager document. Select <span class="Emphasis">Choose</span> on the toolbar and include <span class="Emphasis">Site Type</span> from the <span class="Emphasis">Site Type</span> metadata group. The <span class="Emphasis">Site Type</span> column displays <span class="Emphasis">Account</span> for wholesale accounts.</p>
+        <p>
+            <img src="Site Type.PNG" class="LargeImages" />
+        </p>
+        <p>Detailed forecast data can be viewed by navigating to the <span class="Emphasis">Forecast Viewer</span> blade and reviewing the <span class="Emphasis">Account Forecast</span> series.</p>
         <h2>Order Manager</h2>
         <p>Planners can now see all the different suppliers for a selected order line based on the order line's  construction type, the product capacity of each supplier over time, and how much of the production capacity is being used already by authorized orders.</p>
-        <p>&#160;</p>
-        <p>When an order line is selected, the new <span class="Emphasis">Supplier Capacity Report </span> blade populates with all the suppliers that have the order line’s construction type. Construction types have a 1-to-1 relationship to items. Planners can review how much production capacity is left for each supplier of the construction type and how much of the capacity is taken up by pending stock. </p>
+        <p>When an order line is selected, the new <span class="Emphasis">Supplier Capacity Report </span> blade populates with all the suppliers that have the order line’s construction type. Construction types have a 1-to-1 relationship to items. Planners can review how much production capacity is left for each supplier of the construction type and how much of the capacity is taken up by pending stock. Supply planners also need to handle scenarios where all suppliers are unable to fulfill the order so that exceptions are managed effectively.</p>
+        <p class="BasicNote">Both Replenishment and Assortment Planning orders can have supplier constraints applied to them. </p>
+        <h3>Supplier production constraints</h3>
+        <p>Often times a wholesaler’s constraint lies with supplier production. In this scenario and bearing in mind each supplier can produce X amount of construction types a month, a supply planner:</p>
+        <ul>
+            <li>
+                <p> looks at all the unconstrained orders today
+
+</p>
+            </li>
+            <li>
+                <p>adjusts the order quantity based on constraints such as
+
+production capacity or orders for a particular vendor has been particularly low.</p>
+            </li>
+        </ul>
+        <p>Planners can run a new macro <span class="Emphasis">Apply Supplier Production Limitation</span> and the values in the <span class="Emphasis">User Order Quantity</span> field in the top grid update according to the supplier production limit of that construction type. The <span class="Emphasis">Supplier Capacity Report</span> displays recommended orders for today without any supplier constraint applied. Planners can review and apply supplier constraints to recommended orders as needed. </p>
+        <p>Order lines that go beyond a supplier's production capacity split with the excess overflowing to another supplier of the same construction type. The resulting multiple order lines have the same order date, but different order quantities. Order quantities that exceeds all available supplier capacity default to a supplier called <span class="Emphasis">Unfulfilled Supplier</span> which shows the unfulfillable capacity.</p>
+        <p>The Order Date defines which recommended order lines of the same construction type is processed first with the earliest order date going first. The order in which suppliers are used to fulfill a construction type is dictated by the supplier construction priority provided during import.</p>
+        <p class="BasicNote">Dates do not change. Therefore, policies such as schedules and lead time do not apply. However, policy <span class="Emphasis">Inventory Policy: Order Multiple and Min Order Quantity</span> does apply.</p>
+        <p class="p">For example:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/standard.css');width: 99%;" class="TableStyle-standard" cellspacing="0">
+            <col class="TableStyle-standard-Column-Column1" style="width: 11%;" />
+            <col class="TableStyle-standard-Column-Column2" style="width: 11%;" />
+            <col class="TableStyle-standard-Column-Column1" style="width: 26%;" />
+            <col class="TableStyle-standard-Column-Column2" style="width: 26%;" />
+            <col class="TableStyle-standard-Column-Column1" style="width: 26%;" />
+            <thead>
+                <tr class="TableStyle-standard-Head-Header1">
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Supplier</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Month</th>
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Construction type 1 Capacity</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Construction type 2 Capacity</th>
+                    <th class="TableStyle-standard-HeadD-Column1-Header1">
+                        <p>Construction type 3 Capacity</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>500</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>5,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyB-Column1-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyB-Column2-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyB-Column1-Body1" style="text-align: center;">
+                        <p>5,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyB-Column2-Body1" style="text-align: center;">
+                        <p>100</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyA-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Scenarios and results:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/standard.css');width: 99%;" class="TableStyle-standard" cellspacing="0">
+            <col class="TableStyle-standard-Column-Column1" style="width: 10%;" />
+            <col class="TableStyle-standard-Column-Column2" style="width: 45%;" />
+            <col class="TableStyle-standard-Column-Column1" style="width: 45%;" />
+            <thead>
+                <tr class="TableStyle-standard-Head-Header1">
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Supplier</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Scenario</th>
+                    <th class="TableStyle-standard-HeadD-Column1-Header1">Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 - Needs 100 Con1 today</p>
+                            </li>
+                            <li>
+                                <p>DC 1 - Needs 2,000 Con1 next month</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 gets 100 Con1 units from Supplier 1 this month</p>
+                            </li>
+                            <li>
+                                <p>DC 1 gets 1,000 Con1 units from Supplier 1 next month</p>
+                            </li>
+                            <li>
+                                <p>DC 1 gets 1,000 Con1 units from Supplier 2 next month</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 - Needs 3,000 Con1 today </p>
+                            </li>
+                            <li>
+                                <p>DC 2 - Needs 2,000 Con1 tomorrow</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 gets 1,500 Con1 units from Supplier 1&amp;2</p>
+                            </li>
+                            <li>
+                                <p>DC 1 gets 1,500 Con1 units from Default Supplier</p>
+                            </li>
+                            <li>
+                                <p>DC 2 gets 2,000 Con1 units from Default Supplier</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyB-Column1-Body1" style="text-align: center;">
+                        <p>3</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyB-Column2-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 - Already shipped 200 units of Con1 from Sup1 this month</p>
+                            </li>
+                            <li>
+                                <p>DC 1 - Needs 1,000 more units of Con1 this month</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-standard-BodyA-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 gets 800 Con1 units from Supplier 1 this month</p>
+                            </li>
+                            <li>
+                                <p>DC 1 gets 200 Con1 units from Supplier 2 this month</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <p class="Important">Existing system policy <span class="Emphasis">Update Stock Pending Value Based On DocumentStatusID Collection</span> (Module: Order Manager) should be taken into account when reserving pending stocks.</p>
     </body>
 </html>
