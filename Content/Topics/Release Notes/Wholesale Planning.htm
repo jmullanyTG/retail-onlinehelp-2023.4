@@ -70,7 +70,7 @@
         <p>Users then maintain the Customer entity and do the linking in Customer Manager. Within Customer Manager, the site represents the account with customers rolling up into accounts. Customers are grouped 1 to 20 like other entities that can be used to show a hierarchy.</p>
         <p>Two new fields <span class="Emphasis">Account Name</span> and <span class="Emphasis">Location Count</span> located under the <span class="Emphasis">Customer Account</span> group can be added to the top grid in the Customer Manager Document. Both fields are editable and have the <span class="Emphasis">Multiple Changes</span> right-click menu option. The value in the <span class="Emphasis">Location Count</span> field can be used within Assortment Planning.</p>
         <h2>Merchandise Financial Planning</h2>
-        <p>Within MFP, TG JE v2023.4 introduces a new Channel labeled <span class="Emphasis">Wholesale</span>, with the ability to add sub-channel hierarchies beneath <span class="Emphasis">Wholesale</span> for use in individual plans by account.</p>
+        <p>Within MFP, TG JE v2023.4 introduces a new <span class="Emphasis">Wholesale</span> Channel  with the ability to add sub-channel hierarchies beneath <span class="Emphasis">Wholesale</span> for use in individual plans by account.</p>
         <h3>Including wholesale totals in the hierarchy</h3>
         <p>If the desired functionality is to include wholesale accounts in MFP but not plan them individually, then all that is necessary to do is include the Channel group in the MFP hierarchy configuration. Then Wholesale will be available when hierarchies are generated.</p>
         <h3>Including Individual wholesale accounts in the hierarchy</h3>
@@ -97,6 +97,383 @@
         <p>
             <img src="../../Resources/Images/Wholesale Planning/View Wholesale Accounts Maintain Financial Plan.PNG" class="LargeImages" />
         </p>
+        <h3>New metrics supporting the Wholesale channel</h3>
+        <p>In addition to following standard formatting, these new metrics conform to the existing MFP metric nomenclature:</p>
+        <ul>
+            <li>
+                <p>If a metric has <span class="Emphasis">Has LY?</span> answered with <span class="Emphasis">Yes</span>, then there is an LY version of the metric, which is named with <span class="Emphasis">LY</span> prepended to the metric name.</p>
+            </li>
+            <li>
+                <p>If a metric has <span class="Emphasis">Has Comparison?</span> answered with <span class="Emphasis">Yes</span>, then there is a comparison version of the metric, which is named with the comparison plan name appended to the metric name.</p>
+            </li>
+        </ul>
+        <table style="mc-table-style: url('../../Resources/TableStyles/standard.css');" class="TableStyle-standard" cellspacing="0">
+            <col class="TableStyle-standard-Column-Column1" style="width: 20%;" />
+            <col class="TableStyle-standard-Column-Column2" style="width: 10%;" />
+            <col class="TableStyle-standard-Column-Column1" style="width: 10%;" />
+            <col class="TableStyle-standard-Column-Column2" style="width: 10%;" />
+            <col class="TableStyle-standard-Column-Column1" style="width: 10%;" />
+            <col class="TableStyle-standard-Column-Column2" style="width: 20%;" />
+            <col class="TableStyle-standard-Column-Column1" style="width: 10%;" />
+            <thead>
+                <tr class="TableStyle-standard-Head-Header1">
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Metric Name</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Editable?</th>
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Has LY?</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Has Comp. 1?</th>
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Has Comp. 2?</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Calculation</th>
+                    <th class="TableStyle-standard-HeadD-Column1-Header1">Format</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>AUT Discount %</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>AUR / AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>0.01%</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Available To Sell Units</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>No</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Available To Sell / AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Bookings Placed</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>No</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Bookings Placed Units * AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>$0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Bookings Placed Units</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>No</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Bookings Placed / AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Cancel At Wholesale</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Cancel Units * AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>$0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Cancel Rate %</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Cancel Units / Sales Units</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>0.01%</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Cancel Units</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Cancel At Wholesale / AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Planned At Once</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Planned At Once Units * AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>$0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Planned At Once Units</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Planned At Once / AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Sell Out Units</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>No</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>N/A</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Shipped At Wholesale</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>No</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Shipped Units * AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>$0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Shipped Net Wholesale</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>No</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Shipped At Wholesale - Booked At Wholesale</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>$0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Shipped Units</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>No</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Shipped At Wholesale / AUT</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>0</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Shipped Units % +/- Sell Out Units</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>No</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>(Shipped Units - Sell Out Units) / Shipped Units</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                        <p>0.01%</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column1-Body1">
+                        <p>Shipped Units +/- Sell Out Units</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyB-Column2-Body1">
+                        <p>No</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column1-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column2-Body1">
+                        <p>Shipped Units - Sell Out Units</p>
+                    </td>
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyA-Column1-Body1">
+                        <p>0</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <h3>Sites and customer accounts</h3>
         <p>Sites and Customer Accounts cannot co-mingle in MFP.  Data for wholesale accounts can exist in their own hierarchy levels alongside retail hierarchy levels, but at the leaf level, they cannot intersect.  For example, if the brand is <span class="Emphasis">ToolsGroup Tees</span>, the Toolsgroup Tees-owned retail site Irvine and the Customer Account called <span class="Emphasis">Irvine Sport Shop</span> that resells ToolsGroup Tees branded items cannot both exist in the <span class="Emphasis">Total Company &gt; USA &gt; Southwest</span> Channel.  </p>
         <p>The hierarchy must be further divided to separate sites and accounts, or hierarchy levels with mixtures must be excluded. If a mixed hierarchy level is included, the following message displays:</p>
