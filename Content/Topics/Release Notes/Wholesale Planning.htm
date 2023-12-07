@@ -337,35 +337,45 @@ While the construction code is very specific, the actual supplier constraint is 
             <img src="../../Resources/Images/Wholesale Planning/View Wholesale Accounts Maintain Financial Plan.PNG" class="LargeImages" />
         </p>
         <h3>New metrics supporting the Wholesale channel</h3>
-        <p>In addition to following standard formatting, these new metrics conform to the existing MFP metric nomenclature:</p>
+        <p>In addition to following standard formatting, these new metrics conform to the existing MFP metric nomenclature.</p>
+        <h4>Notes</h4>
+        <p>All the below metrics have:</p>
         <ul>
             <li>
-                <p>If a metric has <span class="Emphasis">Has LY?</span> answered with <span class="Emphasis">Yes</span>, then there is an LY version of the metric, which is named with <span class="Emphasis">LY</span> prepended to the metric name.</p>
+                <p> an <span class="Emphasis">LY</span> version of the metric, which is named with <span class="Emphasis">LY</span> prepended to the metric name.</p>
             </li>
             <li>
-                <p>If a metric has <span class="Emphasis">Has Comparison?</span> answered with <span class="Emphasis">Yes</span>, then there is a comparison version of the metric, which is named with the comparison plan name appended to the metric name.</p>
+                <p>a <span class="Emphasis">Comparison 1</span> and <span class="Emphasis">Comparison 1</span> version of the metric, which is named with the comparison plan name appended to the metric name.</p>
+            </li>
+            <li>
+                <p>an asterisk if dynamic renaming of the metric is in place to support the use of these values in either a Retail or Wholesale context.</p>
             </li>
         </ul>
         <table style="mc-table-style: url('../../Resources/TableStyles/standard.css');" class="TableStyle-standard" cellspacing="0">
+            <col class="TableStyle-standard-Column-Column1" style="width: 15%;" />
+            <col class="TableStyle-standard-Column-Column2" style="width: 10%;" />
             <col class="TableStyle-standard-Column-Column1" style="width: 20%;" />
             <col class="TableStyle-standard-Column-Column2" style="width: 10%;" />
-            <col class="TableStyle-standard-Column-Column1" style="width: 10%;" />
-            <col class="TableStyle-standard-Column-Column2" style="width: 10%;" />
-            <col class="TableStyle-standard-Column-Column1" style="width: 10%;" />
-            <col class="TableStyle-standard-Column-Column2" style="width: 20%;" />
-            <col class="TableStyle-standard-Column-Column1" style="width: 10%;" />
+            <col class="TableStyle-standard-Column-Column1" style="width: 35%;" />
             <thead>
                 <tr class="TableStyle-standard-Head-Header1">
                     <th class="TableStyle-standard-HeadE-Column1-Header1">Metric Name</th>
                     <th class="TableStyle-standard-HeadE-Column2-Header1">Editable?</th>
-                    <th class="TableStyle-standard-HeadE-Column1-Header1">Has LY?</th>
-                    <th class="TableStyle-standard-HeadE-Column2-Header1">Has Comp. 1?</th>
-                    <th class="TableStyle-standard-HeadE-Column1-Header1">Has Comp. 2?</th>
-                    <th class="TableStyle-standard-HeadE-Column2-Header1">Calculation</th>
-                    <th class="TableStyle-standard-HeadD-Column1-Header1">Format</th>
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Calculation</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Format</th>
+                    <th class="TableStyle-standard-HeadD-Column1-Header1">Note</th>
                 </tr>
             </thead>
             <tbody>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">ASP*</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">IF( Sales Units = 0, 0, Sales / Booked Units)</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">$0.00</td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric; combines with AUR for retail channels</td>
+                </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
                         <p>AUT Discount %</p>
@@ -374,43 +384,45 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>Yes</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>AUR / AUT</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>0.01%</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Available To Sell Units</p>
+                        <p>Available To Sell Units*</p>
                     </td>
                     <td class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>No</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
+                        <p>N/A</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Available To Sell / AUT</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
                         <p>0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric; combines with Total Buy Units for retail channels</td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">Booked At Wholesale*</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">AUT * Booked Units</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">$0</td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric; combines with Total Original Retail for retail channels</td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">Booked Units*</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <p>Yes</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">IF( AUT = 0, 0, Booked At Wholesale / AUT)</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">0</td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric; combines with Sales Units for retail channels</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -420,20 +432,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>No</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Bookings Placed Units * AUT</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>$0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -443,20 +447,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>No</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Bookings Placed / AUT</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -466,20 +462,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>Yes</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Cancel Units * AUT</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>$0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -489,20 +477,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>Yes</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Cancel Units / Sales Units</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>0.01%</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -512,20 +492,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>Yes</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Cancel At Wholesale / AUT</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -535,20 +507,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>Yes</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Planned At Once Units * AUT</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>$0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -558,20 +522,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>Yes</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Planned At Once / AUT</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -581,20 +537,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>No</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>N/A</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -604,20 +552,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>No</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Shipped Units * AUT</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>$0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -627,20 +567,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>No</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Shipped At Wholesale - Booked At Wholesale</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>$0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -650,20 +582,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>No</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>Shipped At Wholesale / AUT</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
@@ -673,20 +597,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>No</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>(Shipped Units - Sell Out Units) / Shipped Units</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyD-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyE-Column2-Body1">
                         <p>0.01%</p>
                     </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column1-Body1">
@@ -696,20 +612,12 @@ While the construction code is very specific, the actual supplier constraint is 
                         <p>No</p>
                     </td>
                     <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column2-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column1-Body1">
-                        <p>Yes</p>
-                    </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column2-Body1">
                         <p>Shipped Units - Sell Out Units</p>
                     </td>
-                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyA-Column1-Body1">
+                    <td rowspan="1" colspan="1" class="TableStyle-standard-BodyB-Column2-Body1">
                         <p>0</p>
                     </td>
+                    <td class="TableStyle-standard-BodyA-Column1-Body1">Wholesale-specific metric</td>
                 </tr>
             </tbody>
         </table>
