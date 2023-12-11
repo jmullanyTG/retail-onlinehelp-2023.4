@@ -311,8 +311,14 @@ production capacity or orders for a particular vendor has been particularly low.
         <p class="Important">Existing system policy <span class="Emphasis">Update Stock Pending Value Based On DocumentStatusID Collection</span> (Module: Order Manager) should be taken into account when reserving pending stocks.</p>
         <h3>Reviewing the customers under an Account site type and setting default contributions</h3>
         <p>Wholesale planners can, when managing wholesale accounts, use Site Manager to see the customer names for sites of type <span class="Emphasis">Account</span> by selecting a new blade <span class="Emphasis">Site Account Customer Relations</span>. The customer names are read-only as changes to the Customer Account relationship are performed in Customer Manager.</p>
+        <p>
+            <img src="../../Resources/Images/Site Manager/Site Account Customer Relations.PNG" class="LargeImages" />
+        </p>
         <p class="BasicNote">Sites that are not of site type Account do not display any results.</p>
         <p>A second new blade in Site Manager, <span class="Emphasis">Site Account Source Site Contribution</span>, displays a cross product of items in the hierarchy and all DCs. Users can review the default contribution factor (or split percentage) derived from past customer imports and override the default contributions on a particular hierarchy level as desired. However, an override itself cannot be overridden. </p>
+        <p>
+            <img src="../../Resources/Images/Site Manager/Site Account Source Site Contribution.PNG" class="LargeImages" />
+        </p>
         <p>After a user enters a value in the <span class="Emphasis">Override</span> field and clicks <span class="Emphasis">Save</span>, the <span class="Emphasis">Clear Override</span> field for that row is formatted orange. The <span class="Emphasis">Clear Override</span> functionality clears overrides for all the DCs for the item. When overrides are cleared the default contribution percentage is used.</p>
         <p class="BasicNote">If 10,000 units have a 50/50 split between 2 DCs out of a total of 4 DCs, then 5,000 units are sent to each of the 2 DCs.</p>
         <p>A new system policy <span class="Emphasis">Site Wholesale Account Distribution: ItemMaster Hierarchy ID</span> defines the hierarchy used. (For more information, see the <cite>System Policies</cite> section.). Also, a new job task <span class="Emphasis">(WS) (Weekly) Calculate Source Site Percent Contribution for Accounts</span> must be configured.</p>
