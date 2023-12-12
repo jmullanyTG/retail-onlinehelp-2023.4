@@ -7,323 +7,8 @@
         <h1>Wholesale Planning</h1>
         <p>Wholesale planners managing wholesale accounts can have accounts that split demand between multiple DCs. This functions similarly to TG JE's demand transference, though in this case wholesale accounts transfer their sales into DCs and not stores with demand aggregating to DCs only.</p>
         <p>Wholesale accounts don’t have a sales history. Instead, these accounts use sell-ins (customer orders) in place of sales history for forecasting purposes and are managed by grouping multiple sell-ins together into major accounts. </p>
-        <h2 MadCap:conditions="General.DoNotPublish">Job Manager</h2>
-        <h3>Using customer orders as sales history for Customers <MadCap:conditionalText MadCap:conditions="General.DoNotPublish">DMDEV-88190</MadCap:conditionalText></h3>
-        <p>A new weekly task, <span class="Emphasis">(WS) (Weekly) Generate Sales History from Customer Orders</span>, uses customer orders that happened in the past as sales history if the customer order went to an account. The relationships defined in Customer Manager determine how Customer data rolls into which accounts.</p>
-        <p class="BasicNote">Customer orders with dates in the future are ignored.</p>
-        <p>Only the major accounts are forecast and replenished.. For example,</p>
-        <ul>
-            <li>
-                <p>Vandelay Industries (the primary wholesale account)</p>
-                <ul>
-                    <li>
-                        <p>BrandA</p>
-                    </li>
-                    <li>
-                        <p>BrandB</p>
-                    </li>
-                    <li>
-                        <p>BrandC</p>
-                    </li>
-                </ul>
-                <p>Vandelay Industries is the major account and is the account that is forecast and replenished.</p>
-            </li>
-        </ul>
-        <h2 MadCap:conditions="General.DoNotPublish">Customer Manager</h2>
-        <h2 MadCap:conditions="General.DoNotPublish">Setting sites as site type Account</h2>
-        <p>For TG JE v2023.4, the <span class="Emphasis">Customer Account Manager</span> module was renamed <span class="Emphasis">Customer Manager</span> to reflect updates that support Wholesale planning. The enhanced functionality means sites can be set up as a new site type called <span class="Emphasis">Account</span> that represents a collection of customer accounts in a many customers to one <span class="Emphasis">Account</span> site relationship. Customers are grouped 1 to 20 like other entities that can be used to show a hierarchy.  Users maintain the Customer entity and do the linking to the Account site entity in Customer Manager. </p>
-        <p class="BasicNote">Customer orders are processed as regular sales for the <span class="Emphasis">Account</span> type site.</p>
-        <p>Two new fields <span class="Emphasis">Account Name</span> and <span class="Emphasis">Location Count</span> located under the <span class="Emphasis">Customer Account</span> group can be added to the top grid in the Customer Manager Document. Both fields are editable and have the <span class="Emphasis">Multiple Changes</span> right-click menu option. The value in the <span class="Emphasis">Location Count</span> field can be used within Assortment Planning.</p>
-        <h3>Associating suppliers with Attributes <MadCap:conditionalText MadCap:conditions="General.DoNotPublish">Supplier Manager</MadCap:conditionalText></h3>
-        <p>A new import associates suppliers with Attributes. The import fields are:</p>
-        <ul>
-            <li>
-                <p>ConstructionCode</p>
-            </li>
-            <li>
-                <p>SupplierCode</p>
-            </li>
-            <li>
-                <p>Ranking</p>
-            </li>
-            <li>
-                <p>ActiveFlag</p>
-            </li>
-        </ul>
-        <p>A construction code can be associated with multiple suppliers. For example, if the construction code is <span class="Emphasis">SHIRT</span> then there can be multiple suppliers that can manufacture construction code <span class="Emphasis">SHIRT</span>.
-
-While the construction code is very specific, the actual supplier constraint is an Attribute which can be any Attribute. </p>
-        <p>Ranking is the list of suppliers that sets the order in which suppliers are used before consuming the next supplier’s capacity. It is possible to have different rankings per construction type. For example, for shirts, supplier A is  ranked 1 and supplier B is ranked 2. Whereas, for ties supplier B is ranked 1 and supplier B is ranked 2. </p>
-        <p>Each supplier can have multiple construction types and multiple construction groups associated with them. For example,</p>
-        <ul>
-            <li>
-                <p>Supplier 1: (V-necks, T-shirts, and Tank Tops)</p>
-            </li>
-            <li>
-                <p>Supplier 2: (T-shirts, Dress-shirts, and Collar Shirts)</p>
-            </li>
-        </ul>
-        <p>Construction type can be material, machinery, time required to complete manufacture of required amount of items, and so on. Basically, something associated with the constraint that a supplier has in terms of the material, fabric or other factor related to the ability to actually run the production of the product and what limitations the supplier has.</p>
-        <p class="BasicNote">New system policy <span class="Emphasis">Supplier Constraint: Construction Type</span> (Module: Order Manager) defines which Attribute to use for supplier constraint.</p>
-        <p>Should a product not have an Attribute associated with it then the new macro, <span class="Emphasis">Macro Apply Supplier Production Limitation</span>, will not function and supply will not be constrained. The macro requires an Attribute because if there is no Attribute associated with a construction type that can be constrained by that construction type, there's nothing to link to the particular macro and supply cannot be constrained.</p>
-        <p class="BasicNote">The Attribute needs to be set prior to actually creating purchase orders.</p>
-        <h3>Reviewing suppliers associated with Attributes</h3>
-        <p>A new blade labeled <span class="Emphasis">Supplier Capacity Report</span> has been added to the main view in the Supplier Manager module. Selecting a supplier in the top grid refreshes the blade to display the Attributes associated with the supplier. Within the <span class="Emphasis">Supplier Capacity Report</span>, users define the production capacity (what the supplier can make and how much they can make) for each Attribute for a time period. Construction type is an Attribute of the supplier and it's also an Attribute of items and is not a level of the hierarchy.</p>
-        <p class="BasicNote">The supplier and the construction types that the supplier can provide are visible in a new blade within Order Manager labeled <span class="Emphasis">Supplier Capacity Report</span>. </p>
-        <h3>Specifying capacities in time periods</h3>
-        <p>Additionally, a second blade, <span class="Emphasis">Supplier Construction Type Capacity</span>, has been added to the Supplier Manager module. </p>
-        <p>
-            <img src="../../Resources/Images/Supplier/Supplier Construction Type Capacity Widget.png" class="LargeImages" />
-        </p>
-        <p class="BasicNote">New system policy <span class="Emphasis">Supplier Constraint: Bucket Type</span> (Module: Order Manager) defines the time period to use for the supplier constraint. The bucket range is based on today and the value for existing system policy <span class="Emphasis">Future Days</span> (Engine: Forecasts).</p>
-        <p>Only the <span class="Emphasis">Total Supplier Quantity</span> field is editable with all other columns being read-only. Planners can multi-select cells in the <span class="Emphasis">Total Supplier Quantity</span> field to specify the capacity in that bucket.</p>
-        <h2>Assigning clusters to Wholesale Account Cluster sets</h2>
-        <p>Once suppliers are imported and assigned to an Account, then the Account is assigned to a new Cluster Type in the Site Clustering Module called <span class="Emphasis">Wholesale Account Cluster</span>. Sites that are assigned the Account Site Type are linked to Customers via the Customer Manager module.</p>
-        <p>Users do not select or create wholesale account clusters within the UI as these are automatically created within the import process. However, users will need to open new wholesale account cluster sets and click <span class="Emphasis">Calculate</span> to assign the correct clusters. How sites are selected remains unchanged and is the same as with the other previously existing Cluster Types. Snapshots continue as normal.</p>
-        <p class="BasicNote">Editing a Cluster Set will show the Classifications created.</p>
-        <h2>Working with Wholesale orders</h2>
-        <p>Planners can now see all the different suppliers for a selected order line based on the order line's  construction type (construction types have a 1-to-1 relationship to items), the production capacity of each supplier over time, and how much of the production capacity is being used already by authorized orders.</p>
-        <p>When an order line is selected, the new <span class="Emphasis">Supplier Capacity Report </span> blade populates with all the suppliers that have the order line’s construction type.  Planners can review how much production capacity is left for each supplier of the construction type and how much of the capacity is taken up by pending stock. Supply planners can also manage scenarios where all suppliers are unable to fulfill the order so that exceptions are managed effectively.</p>
-        <p>The Order Date defines which recommended order lines of the same construction type are processed first with the earliest order date going first. The order in which suppliers are used to fulfill a construction type is dictated by the supplier construction priority provided during import. However, if all the orders have the same delivery date, construction type, and source supplier then order number is used.</p>
-        <p class="BasicNote">Dates do not change. Therefore, policies such as schedules and lead time do not apply. However, policy <span class="Emphasis">Inventory Policy: Order Multiple and Min Order Quantity</span> does apply.</p>
-        <p>
-            <img src="../../Resources/Images/Order Manager/Supplier Capacity Report.PNG" class="LargeImages">
-            </img>
-        </p>
-        <h3>Supplier production constraints</h3>
-        <p>Often times a wholesaler’s constraint lies with supplier production. In this scenario and bearing in mind each supplier can produce X amount of construction types a month, a supply planner:</p>
-        <ul>
-            <li>
-                <p> looks at all the unconstrained orders today
-
-</p>
-            </li>
-            <li>
-                <p>adjusts the order quantity based on constraints such as
-
-production capacity or orders for a particular vendor has been particularly low.</p>
-            </li>
-        </ul>
-        <p>Planners can apply the supplier production limit of a construction type to the values in the <span class="Emphasis">User Order Quantity</span> field in the top grid using a new macro, <span class="Emphasis">Apply Supplier Production Limitation</span>. The values update automatically. The results can be seen in the new <span class="Emphasis">Supplier Capacity Report</span> blade which displays when the <span class="Emphasis">Details</span> toolbar button is clicked. The <span class="Emphasis">Supplier Capacity Report</span> displays recommended orders for today without any supplier constraint applied. Planners can review and apply supplier constraints to recommended orders as needed. </p>
-        <p>
-            <img src="../../Resources/Images/Order Manager/Pending Order Quantity.PNG" class="LargeImages" />
-        </p>
-        <p>In the above example, the value in the <span class="Emphasis">Pending Order Quantity</span> field is the sum total (64)  of the previously authorized orders (33, 31) shown in the <span class="Emphasis">User Order Quantity</span> field.</p>
-        <p>The default value that displays in the <span class="Emphasis"> Remaining Quantity</span> field is set in the Supplier Manager module against the bucket with the desired delivery date. Another product with the same Attribute contributes to the capacity. Failing to run the <span class="Emphasis">Apply Supplier Production Limitation</span> macro may, upon an order being Authorized, result in the value in the <span class="Emphasis"> Remaining Quantity</span> field turning negative due to an over commit. In this scenario, Planners can use the <span class="Emphasis">Retract</span> toolbar functionality to reverse the authorization and then run the macro against the order. This will add new order lines in the top grid and leave a positive value in the <span class="Emphasis"> Remaining Quantity</span> field.</p>
-        <p>Order lines that go beyond a supplier's production capacity split with the excess overflowing to the next ranked supplier of the same construction type. The resulting multiple order lines have the same order date, but different order quantities. Order quantities that exceed all available supplier capacity default to a supplier called <span class="Emphasis">Not Known</span> which has a limited capacity. Suppliers that have not been configured have a limited capacity rather than no capacity. The process does not look ahead to take orders from the next bucket (time period).</p>
-        <p> In the following, <span class="Emphasis">Intra State Supplies</span> was applied first being the default supplier with <span class="Emphasis">Mass Supply Shipments Inc</span> applied second being the next ranked supplier. </p>
-        <p>
-            <img src="../../Resources/Images/Order Manager/Default Supplier.PNG" class="LargeImages" />
-        </p>
-        <h3>Example of supplier ranking</h3>
-        <table style="mc-table-style: url('../../Resources/TableStyles/standard.css');width: 99%;" class="TableStyle-standard" cellspacing="0">
-            <col class="TableStyle-standard-Column-Column1" style="width: 11%;">
-            </col>
-            <col class="TableStyle-standard-Column-Column2" style="width: 11%;">
-            </col>
-            <col class="TableStyle-standard-Column-Column1" style="width: 26%;">
-            </col>
-            <col class="TableStyle-standard-Column-Column2" style="width: 26%;">
-            </col>
-            <col class="TableStyle-standard-Column-Column1" style="width: 26%;">
-            </col>
-            <thead>
-                <tr class="TableStyle-standard-Head-Header1">
-                    <th class="TableStyle-standard-HeadE-Column1-Header1">Supplier</th>
-                    <th class="TableStyle-standard-HeadE-Column2-Header1">Month</th>
-                    <th class="TableStyle-standard-HeadE-Column1-Header1">Construction type 1 Capacity</th>
-                    <th class="TableStyle-standard-HeadE-Column2-Header1">Construction type 2 Capacity</th>
-                    <th class="TableStyle-standard-HeadD-Column1-Header1">
-                        <p>Construction type 3 Capacity</p>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="TableStyle-standard-Body-Body1">
-                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
-                        <p>1</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
-                        <p>1</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
-                        <p>1,000</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
-                        <p>1,000</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyD-Column1-Body1" style="text-align: center;">
-                        <p>1,000</p>
-                    </td>
-                </tr>
-                <tr class="TableStyle-standard-Body-Body1">
-                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
-                        <p>1</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
-                        <p>2</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
-                        <p>1,000</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
-                        <p>1,000</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyD-Column1-Body1" style="text-align: center;">
-                        <p>1,000</p>
-                    </td>
-                </tr>
-                <tr class="TableStyle-standard-Body-Body1">
-                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
-                        <p>2</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
-                        <p>1</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
-                        <p>500</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
-                        <p>5,000</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyD-Column1-Body1" style="text-align: center;">
-                        <p>1,000</p>
-                    </td>
-                </tr>
-                <tr class="TableStyle-standard-Body-Body1">
-                    <td class="TableStyle-standard-BodyB-Column1-Body1" style="text-align: center;">
-                        <p>2</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyB-Column2-Body1" style="text-align: center;">
-                        <p>2</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyB-Column1-Body1" style="text-align: center;">
-                        <p>5,000</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyB-Column2-Body1" style="text-align: center;">
-                        <p>100</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyA-Column1-Body1" style="text-align: center;">
-                        <p>1,000</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <p>Scenarios and results:</p>
-        <table style="mc-table-style: url('../../Resources/TableStyles/standard.css');width: 99%;" class="TableStyle-standard" cellspacing="0">
-            <col class="TableStyle-standard-Column-Column1" style="width: 10%;">
-            </col>
-            <col class="TableStyle-standard-Column-Column2" style="width: 45%;">
-            </col>
-            <col class="TableStyle-standard-Column-Column1" style="width: 45%;">
-            </col>
-            <thead>
-                <tr class="TableStyle-standard-Head-Header1">
-                    <th class="TableStyle-standard-HeadE-Column1-Header1">Supplier</th>
-                    <th class="TableStyle-standard-HeadE-Column2-Header1">Scenario</th>
-                    <th class="TableStyle-standard-HeadD-Column1-Header1">Result</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="TableStyle-standard-Body-Body1">
-                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
-                        <p>1</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column2-Body1">
-                        <ul>
-                            <li>
-                                <p>DC 1 - Needs 100 Con1 today</p>
-                            </li>
-                            <li>
-                                <p>DC 1 - Needs 2,000 Con1 next month</p>
-                            </li>
-                        </ul>
-                    </td>
-                    <td class="TableStyle-standard-BodyD-Column1-Body1">
-                        <ul>
-                            <li>
-                                <p>DC 1 gets 100 Con1 units from Supplier 1 this month</p>
-                            </li>
-                            <li>
-                                <p>DC 1 gets 1,000 Con1 units from Supplier 1 next month</p>
-                            </li>
-                            <li>
-                                <p>DC 1 gets 1,000 Con1 units from Supplier 2 next month</p>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr class="TableStyle-standard-Body-Body1">
-                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
-                        <p>2</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyE-Column2-Body1">
-                        <ul>
-                            <li>
-                                <p>DC 1 - Needs 3,000 Con1 today </p>
-                            </li>
-                            <li>
-                                <p>DC 2 - Needs 2,000 Con1 tomorrow</p>
-                            </li>
-                        </ul>
-                    </td>
-                    <td class="TableStyle-standard-BodyD-Column1-Body1">
-                        <ul>
-                            <li>
-                                <p>DC 1 gets 1,500 Con1 units from Supplier 1&amp;2</p>
-                            </li>
-                            <li>
-                                <p>DC 1 gets 1,500 Con1 units from Default Supplier</p>
-                            </li>
-                            <li>
-                                <p>DC 2 gets 2,000 Con1 units from Default Supplier</p>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr class="TableStyle-standard-Body-Body1">
-                    <td class="TableStyle-standard-BodyB-Column1-Body1" style="text-align: center;">
-                        <p>3</p>
-                    </td>
-                    <td class="TableStyle-standard-BodyB-Column2-Body1">
-                        <ul>
-                            <li>
-                                <p>DC 1 - Already shipped 200 units of Con1 from Sup1 this month</p>
-                            </li>
-                            <li>
-                                <p>DC 1 - Needs 1,000 more units of Con1 this month</p>
-                            </li>
-                        </ul>
-                    </td>
-                    <td class="TableStyle-standard-BodyA-Column1-Body1">
-                        <ul>
-                            <li>
-                                <p>DC 1 gets 800 Con1 units from Supplier 1 this month</p>
-                            </li>
-                            <li>
-                                <p>DC 1 gets 200 Con1 units from Supplier 2 this month</p>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <p class="Important">Existing system policy <span class="Emphasis">Update Stock Pending Value Based On DocumentStatusID Collection</span> (Module: Order Manager) should be taken into account when reserving pending stocks.</p>
-        <h3>Reviewing the customers under an Account site type and setting default contributions</h3>
-        <p>Wholesale planners can, when managing wholesale accounts, use Site Manager to see the customer names for sites of type <span class="Emphasis">Account</span> by selecting a new blade <span class="Emphasis">Site Account Customer Relations</span>. The customer names are read-only as changes to the Customer Account relationship are performed in Customer Manager.</p>
-        <p>
-            <img src="../../Resources/Images/Site Manager/Site Account Customer Relations.PNG" class="LargeImages" />
-        </p>
-        <p class="BasicNote">Sites that are not of site type Account do not display any results.</p>
-        <p>A second new blade in Site Manager, <span class="Emphasis">Site Account Source Site Contribution</span>, displays a cross product of items in the hierarchy and all DCs. Users can review the default contribution factor (or split percentage) derived from past customer imports and override the default contributions on a particular hierarchy level as desired. However, an override itself cannot be overridden. </p>
-        <p>
-            <img src="../../Resources/Images/Site Manager/Site Account Source Site Contribution.PNG" class="LargeImages" />
-        </p>
-        <p>After a user enters a value in the <span class="Emphasis">Override</span> field and clicks <span class="Emphasis">Save</span>, the <span class="Emphasis">Clear Override</span> field for that row is formatted orange. The <span class="Emphasis">Clear Override</span> functionality clears overrides for all the DCs for the item. When overrides are cleared the default contribution percentage is used.</p>
-        <p class="BasicNote">If 10,000 units have a 50/50 split between 2 DCs out of a total of 4 DCs, then 5,000 units are sent to each of the 2 DCs.</p>
-        <p>A new system policy <span class="Emphasis">Site Wholesale Account Distribution: ItemMaster Hierarchy ID</span> defines the hierarchy used. (For more information, see the <cite>System Policies</cite> section.). Also, a new job task <span class="Emphasis">(WS) (Weekly) Calculate Source Site Percent Contribution for Accounts</span> must be configured.</p>
-        <h2>Merchandise Financial Planning</h2>
-        <p>Within MFP, TG JE v2023.4 introduces a new <span class="Emphasis">Wholesale</span> Channel  with the ability to add sub-channel hierarchies beneath <span class="Emphasis">Wholesale</span> for use in individual plans by account.</p>
+        <h2 MadCap:conditions="General.DoNotPublish">Merchandise Financial Planning</h2>
+        <p>Within MFP, TG JE v2023.4 introduces a new <span class="Emphasis">Wholesale</span> Channel, with the ability to add sub-channel hierarchies beneath <span class="Emphasis">Wholesale</span> for use in individual plans by account.</p>
         <h3>Including wholesale totals in the hierarchy</h3>
         <p>If the desired functionality is to include wholesale accounts in MFP but not plan them individually, then all that is necessary to do is include the Channel group in the MFP hierarchy configuration. Then Wholesale will be available when hierarchies are generated.</p>
         <h3>Including Individual wholesale accounts in the hierarchy</h3>
@@ -641,6 +326,344 @@ production capacity or orders for a particular vendor has been particularly low.
         <p>
             <img src="../../Resources/Images/Wholesale Planning/Sites and Customer Accounts Mixed.png" class="LargeImages" />
         </p>
+        <h2 MadCap:conditions="General.DoNotPublish">Job Manager</h2>
+        <h3>Using customer orders as sales history for Customers <MadCap:conditionalText MadCap:conditions="General.DoNotPublish">DMDEV-88190</MadCap:conditionalText></h3>
+        <p>A new weekly task, <span class="Emphasis">(WS) (Weekly) Generate Sales History from Customer Orders</span>, uses customer orders that happened in the past as sales history if the customer order went to an account. The relationships defined in Customer Manager determine how Customer data rolls into which accounts.</p>
+        <p class="BasicNote">Customer orders with dates in the future are ignored.</p>
+        <p>Only the major accounts are forecast and replenished.. For example,</p>
+        <ul>
+            <li>
+                <p>Vandelay Industries (the primary wholesale account)</p>
+                <ul>
+                    <li>
+                        <p>BrandA</p>
+                    </li>
+                    <li>
+                        <p>BrandB</p>
+                    </li>
+                    <li>
+                        <p>BrandC</p>
+                    </li>
+                </ul>
+                <p>Vandelay Industries is the major account and is the account that is forecast and replenished.</p>
+            </li>
+        </ul>
+        <h2 MadCap:conditions="General.DoNotPublish">Customer Manager</h2>
+        <h2 MadCap:conditions="General.DoNotPublish">Setting sites as site type Account</h2>
+        <p>For TG JE v2023.4, the <span class="Emphasis">Customer Account Manager</span> module was renamed <span class="Emphasis">Customer Manager</span> to reflect updates that support Wholesale planning. The enhanced functionality means sites can be set up as a new site type called <span class="Emphasis">Account</span> that represents a collection of customer accounts in a many customers to one <span class="Emphasis">Account</span> site relationship. Customers are grouped 1 to 20 like other entities that can be used to show a hierarchy.  Users maintain the Customer entity and do the linking to the Account site entity in Customer Manager. </p>
+        <p class="BasicNote">Customer orders are processed as regular sales for the <span class="Emphasis">Account</span> type site.</p>
+        <p>Two new fields <span class="Emphasis">Account Name</span> and <span class="Emphasis">Location Count</span> located under the <span class="Emphasis">Customer Account</span> group can be added to the top grid in the Customer Manager Document. Both fields are editable and have the <span class="Emphasis">Multiple Changes</span> right-click menu option. The value in the <span class="Emphasis">Location Count</span> field can be used within Assortment Planning.</p>
+        <h3>Associating suppliers with Attributes <MadCap:conditionalText MadCap:conditions="General.DoNotPublish">Supplier Manager</MadCap:conditionalText></h3>
+        <p>A new import associates suppliers with Attributes. The import fields are:</p>
+        <ul>
+            <li>
+                <p>ConstructionCode</p>
+            </li>
+            <li>
+                <p>SupplierCode</p>
+            </li>
+            <li>
+                <p>Ranking</p>
+            </li>
+            <li>
+                <p>ActiveFlag</p>
+            </li>
+        </ul>
+        <p>A construction code can be associated with multiple suppliers. For example, if the construction code is <span class="Emphasis">SHIRT</span> then there can be multiple suppliers that can manufacture construction code <span class="Emphasis">SHIRT</span>.
+
+While the construction code is very specific, the actual supplier constraint is an Attribute which can be any Attribute. </p>
+        <p>Ranking is the list of suppliers that sets the order in which suppliers are used before consuming the next supplier’s capacity. It is possible to have different rankings per construction type. For example, for shirts, supplier A is  ranked 1 and supplier B is ranked 2. Whereas, for ties supplier B is ranked 1 and supplier B is ranked 2. </p>
+        <p>Each supplier can have multiple construction types and multiple construction groups associated with them. For example,</p>
+        <ul>
+            <li>
+                <p>Supplier 1: (V-necks, T-shirts, and Tank Tops)</p>
+            </li>
+            <li>
+                <p>Supplier 2: (T-shirts, Dress-shirts, and Collar Shirts)</p>
+            </li>
+        </ul>
+        <p>Construction type can be material, machinery, time required to complete manufacture of required amount of items, and so on. Basically, something associated with the constraint that a supplier has in terms of the material, fabric or other factor related to the ability to actually run the production of the product and what limitations the supplier has.</p>
+        <p class="BasicNote">New system policy <span class="Emphasis">Supplier Constraint: Construction Type</span> (Module: Order Manager) defines which Attribute to use for supplier constraint.</p>
+        <p>Should a product not have an Attribute associated with it then the new macro, <span class="Emphasis">Macro Apply Supplier Production Limitation</span>, will not function and supply will not be constrained. The macro requires an Attribute because if there is no Attribute associated with a construction type that can be constrained by that construction type, there's nothing to link to the particular macro and supply cannot be constrained.</p>
+        <p class="BasicNote">The Attribute needs to be set prior to actually creating purchase orders.</p>
+        <h3>Reviewing suppliers associated with Attributes</h3>
+        <p>A new blade labeled <span class="Emphasis">Supplier Capacity Report</span> has been added to the main view in the Supplier Manager module. Selecting a supplier in the top grid refreshes the blade to display the Attributes associated with the supplier. Within the <span class="Emphasis">Supplier Capacity Report</span>, users define the production capacity (what the supplier can make and how much they can make) for each Attribute for a time period. Construction type is an Attribute of the supplier and it's also an Attribute of items and is not a level of the hierarchy.</p>
+        <p class="BasicNote">The supplier and the construction types that the supplier can provide are visible in a new blade within Order Manager labeled <span class="Emphasis">Supplier Capacity Report</span>. </p>
+        <h3>Specifying capacities in time periods</h3>
+        <p>Additionally, a second blade, <span class="Emphasis">Supplier Construction Type Capacity</span>, has been added to the Supplier Manager module. </p>
+        <p>
+            <img src="../../Resources/Images/Supplier/Supplier Construction Type Capacity Widget.png" class="LargeImages" />
+        </p>
+        <p class="BasicNote">New system policy <span class="Emphasis">Supplier Constraint: Bucket Type</span> (Module: Order Manager) defines the time period to use for the supplier constraint. The bucket range is based on today and the value for existing system policy <span class="Emphasis">Future Days</span> (Engine: Forecasts).</p>
+        <p>Only the <span class="Emphasis">Total Supplier Quantity</span> field is editable with all other columns being read-only. Planners can multi-select cells in the <span class="Emphasis">Total Supplier Quantity</span> field to specify the capacity in that bucket.</p>
+        <h2>Assigning clusters to Wholesale Account Cluster sets</h2>
+        <p>Once suppliers are imported and assigned to an Account, then the Account is assigned to a new Cluster Type in the Site Clustering Module called <span class="Emphasis">Wholesale Account Cluster</span>. Sites that are assigned the Account Site Type are linked to Customers via the Customer Manager module.</p>
+        <p>Users do not select or create wholesale account clusters within the UI as these are automatically created within the import process. However, users will need to open new wholesale account cluster sets and click <span class="Emphasis">Calculate</span> to assign the correct clusters. How sites are selected remains unchanged and is the same as with the other previously existing Cluster Types. Snapshots continue as normal.</p>
+        <p class="BasicNote">Editing a Cluster Set will show the Classifications created.</p>
+        <h2>Working with Wholesale orders</h2>
+        <p>Planners can now see all the different suppliers for a selected order line based on the order line's  construction type (construction types have a 1-to-1 relationship to items), the production capacity of each supplier over time, and how much of the production capacity is being used already by authorized orders.</p>
+        <p>The Order Date defines which recommended order lines of the same construction type are processed first with the earliest order date going first. The order in which suppliers are used to fulfill a construction type is dictated by the supplier construction priority provided during import. However, if all the orders have the same delivery date, construction type, and source supplier then order number is used.</p>
+        <p class="BasicNote">Dates do not change. Therefore, policies such as schedules and lead time do not apply. However, policy <span class="Emphasis">Inventory Policy: Order Multiple and Min Order Quantity</span> does apply.</p>
+        <h3>Supplier production constraints</h3>
+        <p>When an order line is selected, the new <span class="Emphasis">Supplier Capacity Report </span> blade, which displays when the <span class="Emphasis">Details</span> toolbar button is clicked, populates with all the suppliers that have the order line’s construction type.  Planners can review how much production capacity is left for each supplier of the construction type and how much of the capacity is taken up by pending stock. Supply planners can also manage scenarios where all suppliers are unable to fulfill the order so that exceptions are managed effectively.</p>
+        <p>Often times a wholesaler’s constraint lies with supplier production. In this scenario and bearing in mind each supplier can produce X amount of construction types a month, a supply planner:</p>
+        <ul>
+            <li>
+                <p> looks at all the unconstrained orders today
+
+</p>
+            </li>
+            <li>
+                <p>adjusts the order quantity based on constraints such as
+
+production capacity or orders for a particular vendor has been particularly low.</p>
+            </li>
+        </ul>
+        <p>By default, the <span class="Emphasis">Supplier Capacity Report</span> displays recommended orders for today without any supplier constraint applied. Planners can review and apply supplier constraints to recommended orders as needed by applying the supplier production limit of a construction type to the values in the <span class="Emphasis">User Order Quantity</span> field in the top grid using a new macro, <span class="Emphasis">Apply Supplier Production Limitation</span>. The values update automatically with the results displaying in the <span class="Emphasis">Supplier Capacity Report</span> blade.  </p>
+        <p>
+            <img src="../../Resources/Images/Order Manager/Pending Order Quantity.PNG" class="LargeImages" />
+        </p>
+        <p>In the above example, the value in the <span class="Emphasis">Pending Order Quantity</span> field is the sum total (64)  of the previously authorized orders (33, 31) shown in the <span class="Emphasis">User Order Quantity</span> field.</p>
+        <div class="Note_BasicNote">
+            <p>The <span class="Emphasis">Supplier Capacity Report</span> is read-only and color formatted as follows:</p>
+            <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/standard.css');" class="TableStyle-standard" cellspacing="0">
+                <col class="TableStyle-standard-Column-Column1" />
+                <col class="TableStyle-standard-Column-Column2" />
+                <thead>
+                    <tr class="TableStyle-standard-Head-Header1">
+                        <th class="TableStyle-standard-HeadE-Column1-Header1">Color</th>
+                        <th class="TableStyle-standard-HeadD-Column2-Header1">Remaining Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="TableStyle-standard-Body-Body1">
+                        <td class="TableStyle-standard-BodyE-Column1-Body1">Red</td>
+                        <td class="TableStyle-standard-BodyD-Column2-Body1">&lt; 30% (includes negative numbers)</td>
+                    </tr>
+                    <tr class="TableStyle-standard-Body-Body1">
+                        <td class="TableStyle-standard-BodyE-Column1-Body1">YELLOW</td>
+                        <td class="TableStyle-standard-BodyD-Column2-Body1">31 to 70 %</td>
+                    </tr>
+                    <tr class="TableStyle-standard-Body-Body1">
+                        <td class="TableStyle-standard-BodyB-Column1-Body1">GREEN</td>
+                        <td class="TableStyle-standard-BodyA-Column2-Body1">71 to 100 %</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>The default value that displays in the <span class="Emphasis"> Remaining Quantity</span> field is set in the Supplier Manager module against the bucket with the desired delivery date. Another product with the same Attribute contributes to the capacity. Failing to run the <span class="Emphasis">Apply Supplier Production Limitation</span> macro may, upon an order being Authorized, result in the value in the <span class="Emphasis"> Remaining Quantity</span> field turning negative due to an over commit. In this scenario, Planners can use the <span class="Emphasis">Retract</span> toolbar functionality to reverse the authorization and then run the macro against the order. This will add new order lines in the top grid and leave a positive value in the <span class="Emphasis"> Remaining Quantity</span> field.</p>
+        <p>Order lines that go beyond a supplier's production capacity split with the excess overflowing to the next ranked supplier of the same construction type. The resulting multiple order lines have the same order date, but different order quantities. Order quantities that exceed all available supplier capacity default to a supplier called <span class="Emphasis">Not Known</span> which has a limited capacity. Suppliers that have not been configured have a limited capacity rather than no capacity. The process does not look ahead to take orders from the next bucket (time period).</p>
+        <p> In the following, <span class="Emphasis">Intra State Supplies</span> was applied first being the default supplier with <span class="Emphasis">Mass Supply Shipments Inc</span> applied second being the next ranked supplier. </p>
+        <p>
+            <img src="../../Resources/Images/Order Manager/Default Supplier.PNG" class="LargeImages" />
+        </p>
+        <h3>Example of supplier ranking</h3>
+        <table style="mc-table-style: url('../../Resources/TableStyles/standard.css');width: 99%;" class="TableStyle-standard" cellspacing="0">
+            <col class="TableStyle-standard-Column-Column1" style="width: 11%;">
+            </col>
+            <col class="TableStyle-standard-Column-Column2" style="width: 11%;">
+            </col>
+            <col class="TableStyle-standard-Column-Column1" style="width: 26%;">
+            </col>
+            <col class="TableStyle-standard-Column-Column2" style="width: 26%;">
+            </col>
+            <col class="TableStyle-standard-Column-Column1" style="width: 26%;">
+            </col>
+            <thead>
+                <tr class="TableStyle-standard-Head-Header1">
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Supplier</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Month</th>
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Construction type 1 Capacity</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Construction type 2 Capacity</th>
+                    <th class="TableStyle-standard-HeadD-Column1-Header1">
+                        <p>Construction type 3 Capacity</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>500</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1" style="text-align: center;">
+                        <p>5,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyB-Column1-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyB-Column2-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyB-Column1-Body1" style="text-align: center;">
+                        <p>5,000</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyB-Column2-Body1" style="text-align: center;">
+                        <p>100</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyA-Column1-Body1" style="text-align: center;">
+                        <p>1,000</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Scenarios and results:</p>
+        <table style="mc-table-style: url('../../Resources/TableStyles/standard.css');width: 99%;" class="TableStyle-standard" cellspacing="0">
+            <col class="TableStyle-standard-Column-Column1" style="width: 10%;">
+            </col>
+            <col class="TableStyle-standard-Column-Column2" style="width: 45%;">
+            </col>
+            <col class="TableStyle-standard-Column-Column1" style="width: 45%;">
+            </col>
+            <thead>
+                <tr class="TableStyle-standard-Head-Header1">
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Supplier</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Scenario</th>
+                    <th class="TableStyle-standard-HeadD-Column1-Header1">Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>1</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 - Needs 100 Con1 today</p>
+                            </li>
+                            <li>
+                                <p>DC 1 - Needs 2,000 Con1 next month</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 gets 100 Con1 units from Supplier 1 this month</p>
+                            </li>
+                            <li>
+                                <p>DC 1 gets 1,000 Con1 units from Supplier 1 next month</p>
+                            </li>
+                            <li>
+                                <p>DC 1 gets 1,000 Con1 units from Supplier 2 next month</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="text-align: center;">
+                        <p>2</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 - Needs 3,000 Con1 today </p>
+                            </li>
+                            <li>
+                                <p>DC 2 - Needs 2,000 Con1 tomorrow</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 gets 1,500 Con1 units from Supplier 1&amp;2</p>
+                            </li>
+                            <li>
+                                <p>DC 1 gets 1,500 Con1 units from Default Supplier</p>
+                            </li>
+                            <li>
+                                <p>DC 2 gets 2,000 Con1 units from Default Supplier</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyB-Column1-Body1" style="text-align: center;">
+                        <p>3</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyB-Column2-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 - Already shipped 200 units of Con1 from Sup1 this month</p>
+                            </li>
+                            <li>
+                                <p>DC 1 - Needs 1,000 more units of Con1 this month</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="TableStyle-standard-BodyA-Column1-Body1">
+                        <ul>
+                            <li>
+                                <p>DC 1 gets 800 Con1 units from Supplier 1 this month</p>
+                            </li>
+                            <li>
+                                <p>DC 1 gets 200 Con1 units from Supplier 2 this month</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="Important">Existing system policy <span class="Emphasis">Update Stock Pending Value Based On DocumentStatusID Collection</span> (Module: Order Manager) should be taken into account when reserving pending stocks.</p>
+        <h3>Reviewing the customers under an Account site type and setting default contributions</h3>
+        <p>Wholesale planners can, when managing wholesale accounts, use Site Manager to see the customer names for sites of type <span class="Emphasis">Account</span> by selecting a new blade <span class="Emphasis">Site Account Customer Relations</span>. The customer names are read-only as changes to the Customer Account relationship are performed in Customer Manager.</p>
+        <p>
+            <img src="../../Resources/Images/Site Manager/Site Account Customer Relations.PNG" class="LargeImages" />
+        </p>
+        <p class="BasicNote">Sites that are not of site type Account do not display any results.</p>
+        <p>A second new blade in Site Manager, <span class="Emphasis">Site Account Source Site Contribution</span>, displays a cross product of items in the hierarchy and all DCs. Users can review the default contribution factor (or split percentage) derived from past customer imports and override the default contributions on a particular hierarchy level as desired. However, an override itself cannot be overridden. </p>
+        <p>
+            <img src="../../Resources/Images/Site Manager/Site Account Source Site Contribution.PNG" class="LargeImages" />
+        </p>
+        <p>After a user enters a value in the <span class="Emphasis">Override</span> field and clicks <span class="Emphasis">Save</span>, the <span class="Emphasis">Clear Override</span> field for that row is formatted orange. The <span class="Emphasis">Clear Override</span> functionality clears overrides for all the DCs for the item. When overrides are cleared the default contribution percentage is used.</p>
+        <p class="BasicNote">If 10,000 units have a 50/50 split between 2 DCs out of a total of 4 DCs, then 5,000 units are sent to each of the 2 DCs.</p>
+        <p>A new system policy <span class="Emphasis">Site Wholesale Account Distribution: ItemMaster Hierarchy ID</span> defines the hierarchy used. (For more information, see the <cite>System Policies</cite> section.). Also, a new job task <span class="Emphasis">(WS) (Weekly) Calculate Source Site Percent Contribution for Accounts</span> must be configured.</p>
         <h2>Inventory Manager</h2>
         <p>Wholesale Accounts can be easily identified within an Inventory Manager document. Select <span class="Emphasis">Choose</span> on the toolbar and include <span class="Emphasis">Site Type</span> from the <span class="Emphasis">Site Type</span> metadata group. The <span class="Emphasis">Site Type</span> column displays <span class="Emphasis">Account</span> for wholesale accounts.</p>
         <p>
