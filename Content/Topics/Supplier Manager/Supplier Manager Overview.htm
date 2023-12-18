@@ -21,5 +21,15 @@
             <li><span class="Emphasis">Receiving Schedule</span> – The dates on which a supplier is allowed to deliver to any site. </li>
         </ul>
         <p class="BasicNote">An effective shipping schedule can be created through a combination of lead-time (supplier processing) factors and ordering schedules if desired, but it is important to understand the distinction between the two available schedule types and a specific shipping schedule. </p>
+        <h2>Reviewing suppliers associated with Attributes</h2>
+        <p>A new blade labeled <span class="Emphasis">Supplier Capacity Report</span> has been added to the main view in the Supplier Manager module. Selecting a supplier in the top grid refreshes the blade to display the Attributes associated with the supplier. Within the <span class="Emphasis">Supplier Capacity Report</span>, users define the production capacity (what the supplier can make and how much they can make) for each Attribute for a time period. Construction type is an Attribute of the supplier and it's also an Attribute of items and is not a level of the hierarchy.</p>
+        <p class="BasicNote">The supplier and the construction types that the supplier can provide are visible in a new blade within Order Manager labeled <span class="Emphasis">Supplier Capacity Report</span>. </p>
+        <h2>Specifying capacities in time periods</h2>
+        <p>Additionally, a second blade, <span class="Emphasis">Supplier Construction Type Capacity</span>, has been added to the Supplier Manager module. </p>
+        <p>
+            <img src="../../Resources/Images/Supplier/Supplier Construction Type Capacity Widget.png" class="LargeImages" />
+        </p>
+        <p class="BasicNote">New system policy <span class="Emphasis">Supplier Constraint: Bucket Type</span> (Module: Order Manager) defines the time period to use for the supplier constraint. The bucket range is based on today and the value for existing system policy <span class="Emphasis">Future Days</span> (Engine: Forecasts).</p>
+        <p>Only the <span class="Emphasis">Total Supplier Quantity</span> field is editable with all other columns being read-only. Planners can multi-select cells in the <span class="Emphasis">Total Supplier Quantity</span> field to specify the capacity in that bucket.</p>
     </body>
 </html>

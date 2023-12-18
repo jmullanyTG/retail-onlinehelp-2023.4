@@ -1496,6 +1496,9 @@
           </TocEntry>
           <TocEntry
             Title="[%=System.LinkedTitle%]"
+            Link="/Content/Topics/Order Manager/Supplier Production Constraints.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+          <TocEntry
+            Title="[%=System.LinkedTitle%]"
             Link="/Content/Topics/Order Manager/Generating Supplier Orders.htm"></TocEntry>
           <TocEntry
             Title="[%=System.LinkedTitle%]"
@@ -2459,7 +2462,11 @@
         Link="/Content/Topics/Second Level Solution menus/Suppliers.htm">
         <TocEntry
           Title="[%=System.LinkedTitle%]"
-          Link="/Content/Topics/Supplier Manager/Supplier Manager Overview.htm" />
+          Link="/Content/Topics/Supplier Manager/Supplier Manager Overview.htm">
+          <TocEntry
+            Title="[%=System.LinkedTitle%]"
+            Link="/Content/Topics/Supplier Manager/Associating suppliers with Attributes.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+        </TocEntry>
       </TocEntry>
       <TocEntry
         Title="[%=System.LinkedTitle%]"

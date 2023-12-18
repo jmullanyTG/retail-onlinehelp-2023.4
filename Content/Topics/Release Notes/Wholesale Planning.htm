@@ -384,7 +384,7 @@ While the construction code is very specific, the actual supplier constraint is 
         </ul>
         <p>Construction type can be material, machinery, time required to complete manufacture of required amount of items, and so on. Basically, something associated with the constraint that a supplier has in terms of the material, fabric or other factor related to the ability to actually run the production of the product and what limitations the supplier has.</p>
         <p class="BasicNote">New system policy <span class="Emphasis">Supplier Constraint: Construction Type</span> (Module: Order Manager) defines which Attribute to use for supplier constraint.</p>
-        <p>Should a product not have an Attribute associated with it then the new macro, <span class="Emphasis">Macro Apply Supplier Production Limitation</span>, will not function and supply will not be constrained. The macro requires an Attribute because if there is no Attribute associated with a construction type that can be constrained by that construction type, there's nothing to link to the particular macro and supply cannot be constrained.</p>
+        <p>Should a product not have an Attribute associated with it then the new macro, <span class="Emphasis">Apply Supplier Production Limitation</span>, available for Supplier orders in Order Manager will not function and supply will not be constrained. The macro requires an Attribute because if there is no Attribute associated with a construction type that can be constrained by that construction type, there's nothing to link to the particular macro and supply cannot be constrained.</p>
         <p class="BasicNote">The Attribute needs to be set prior to actually creating purchase orders.</p>
         <h3>Reviewing suppliers associated with Attributes</h3>
         <p>A new blade labeled <span class="Emphasis">Supplier Capacity Report</span> has been added to the main view in the Supplier Manager module. Selecting a supplier in the top grid refreshes the blade to display the Attributes associated with the supplier. Within the <span class="Emphasis">Supplier Capacity Report</span>, users define the production capacity (what the supplier can make and how much they can make) for each Attribute for a time period. Construction type is an Attribute of the supplier and it's also an Attribute of items and is not a level of the hierarchy.</p>
@@ -457,7 +457,7 @@ production capacity or orders for a particular vendor has been particularly low.
         <p>
             <img src="../../Resources/Images/Order Manager/Default Supplier.PNG" class="LargeImages" />
         </p>
-        <h3>Example of supplier ranking</h3>
+        <h3>Example: Supplier ranking</h3>
         <table style="mc-table-style: url('../../Resources/TableStyles/standard.css');width: 99%;" class="TableStyle-standard" cellspacing="0">
             <col class="TableStyle-standard-Column-Column1" style="width: 11%;">
             </col>
