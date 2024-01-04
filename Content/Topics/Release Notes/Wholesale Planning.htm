@@ -5,10 +5,10 @@
     </head>
     <body>
         <h1>Wholesale Planning</h1>
-        <p>As the presence of online marketplaces expands, "traditional retailers" are identifying a need to create plans for these "non-traditional" sites. This problem statement could begin with a retailer allocating stock (and sales expectations) to be fulfilled by Amazon, or Walmart, or the like; or it could expand into a broader "wholesale" strategy. In order to support this growing need for retailers to plan in the wholesale space, the traditional TG JE retail functionality has been enhanced to better support wholesale functions.
+        <p>As the presence of online marketplaces expands, traditional retailers are identifying a need to create plans for these non-traditional sites. This problem statement could begin with a retailer allocating stock (and sales expectations) to be fulfilled by Amazon, or Walmart, or the like; or it could expand into a broader "wholesale" strategy. In order to support this growing need for retailers to plan in the wholesale space, the traditional TG JE retail functionality has been enhanced to better support wholesale functions.
 
 </p>
-        <p>While wholesale is often treated as a separate business entity, there is often a need to roll-up retail and wholesale plans into a singular "total company" view. As such, Wholesale functionality within JE is embedded beside Retail functionality. Rather than creating separate plans for Wholesale and Retail, the JE structure supports wholesale as a "channel" within the total company plan. This allows for easier movement of planned stock, sales, and other metrics as demand may shift from one channel to another, as early as the planning process. By composing the JE solution to treat Retail and Wholesale as parts of a Total, revisions during the execution phase are also easier to implement.
+        <p>While wholesale is often treated as a separate business entity, there is often a need to roll-up retail and wholesale plans into a singular total company view. As such, Wholesale functionality within TG JE is embedded beside Retail functionality. Rather than creating separate plans for Wholesale and Retail, the TG JE structure supports wholesale as a channel within the total company plan. This allows for easier movement of planned stock, sales, and other metrics as demand may shift from one channel to another, as early as the planning process. By composing the TG JE solution to treat Retail and Wholesale as parts of a Total, revisions during the execution phase are also easier to implement.
 
 </p>
         <p>These Release Notes are crafted to keep Wholesale-related functionality grouped together; structured as a logical progression through the planning and execution processes. It is important to keep in mind that the enhancements noted in this section, are also visible in the standard retail modules, as applicable.</p>
@@ -26,7 +26,9 @@
         <p>There is reliable historical data for sell-in across all accounts. Sell-out is not as consistently available. To that end, these accounts use sell-ins (customer orders) in place of sales history for forecasting purposes and are managed by grouping multiple sell-ins together into major accounts. </p>
         <p>A new weekly task, <span class="Emphasis">(WS) (Weekly) Generate Sales History from Customer Orders</span>, uses customer orders that happened in the past as sales history if the customer order went to an account. The relationships defined in Customer Manager determine how Customer data rolls into which accounts.</p>
         <p class="BasicNote">Customer orders with dates in the future are ignored.</p>
-        <p>Only the major accounts are forecast and replenished.. For example,</p>
+        <h2>Forecasting Wholesale Account Demand</h2>
+        <p>Wholesale planners managing wholesale accounts can have accounts that split demand between multiple DCs. This functions similarly to TG JE's demand transference, though in this case wholesale accounts transfer their sales into DCs and not stores with demand aggregating to DCs only.</p>
+        <p>Only the major accounts are forecast and replenished. For example,</p>
         <ul>
             <li>
                 <p>Vandelay Industries (the primary wholesale account)</p>
@@ -67,7 +69,7 @@
         <p>There is a new Cluster Type in the Site Clustering Module labeled <span class="Emphasis">Wholesale Account Cluster</span>. How sites are selected remains unchanged and is the same as with the other previously existing Cluster Types. Users do not select or create wholesale account clusters within the UI as these are automatically created within the import process. However, users will need to open new wholesale account cluster sets and click <span class="Emphasis">Calculate</span> to assign the correct clusters. Snapshots continue as normal.</p>
         <p class="BasicNote">Editing a Cluster Set will show the Classifications created.</p>
         <h2>Merchandise Financial Planning</h2>
-        <p>As noted, rather than creating separate MFP plans for Wholesale and Retail, the JE structure supports wholesale as a "channel" within the "total" company plan. Within MFP, TG JE v2023.4 introduces a new <span class="Emphasis">Wholesale</span> Channel. The <span class="Emphasis">Wholesale</span> Channel can be included in a hierarchy along with sub-channel hierarchies beneath <span class="Emphasis">Wholesale</span> for use in individual plans by account.</p>
+        <p>As noted, rather than creating separate MFP plans for Wholesale and Retail, the TG JE structure supports wholesale as a channel within the total company plan. Within MFP, TG JE v2023.4 introduces a new <span class="Emphasis">Wholesale</span> Channel. The <span class="Emphasis">Wholesale</span> Channel can be included in a hierarchy along with sub-channel hierarchies beneath <span class="Emphasis">Wholesale</span> for use in individual plans by account.</p>
         <h3>Including wholesale totals in the hierarchy</h3>
         <p>If the desired functionality is to include wholesale accounts in MFP but not plan them individually, then all that is necessary to do is include the Channel group in the MFP hierarchy configuration. Then Wholesale will be available when hierarchies are generated.</p>
         <h3>Including Individual wholesale accounts in the hierarchy</h3>
@@ -392,8 +394,6 @@
             </img>
         </p>
         <p>Detailed forecast data can be viewed by navigating to the <span class="Emphasis">Forecast Viewer</span> blade and reviewing the <span class="Emphasis">Account Forecast</span> series.</p>
-        <h2>Forecasting Wholesale Account Demand</h2>
-        <p>Wholesale planners managing wholesale accounts can have accounts that split demand between multiple DCs. This functions similarly to TG JE's demand transference, though in this case wholesale accounts transfer their sales into DCs and not stores with demand aggregating to DCs only.</p>
         <h1>Supply Constraints</h1>
         <p>A high-level goal of ToolsGroup JustEnough is to capitalize on Sales (Demand), with an assumption that orders can (and will) be made to achieve the necessary supply (or stock). However, individual suppliers do not have infinite capacity to manufacture stock or fulfill orders. With these capacity constraints in mind, TG JE v2023.4 introduces functionality to define supplier capacity, based on a defined Construction Type attribute. These capacity constraints can then be applied during order generation, by using a Supplier Constraint order macro. This functionality is available during both Wholesale and Retail order generation.</p>
         <h3>Assigning Supplier capacity through Attributes <MadCap:conditionalText MadCap:conditions="General.DoNotPublish">Supplier Manager</MadCap:conditionalText></h3>
@@ -415,7 +415,7 @@
         <p>A construction code can be associated with multiple suppliers. For example, if the construction code is <span class="Emphasis">SHIRT</span> then there can be multiple suppliers that can manufacture construction code <span class="Emphasis">SHIRT</span>.
 
 While the construction code is very specific, the actual supplier constraint is an Attribute, which can be any Attribute. </p>
-        <p>Ranking is the list of suppliers that sets the order in which suppliers are used before consuming the next supplier’s capacity. It is possible to have different rankings per construction type. For example, for shirts, supplier A is  ranked 1 and supplier B is ranked 2. Whereas, for ties supplier B is ranked 1 and supplier B is ranked 2. </p>
+        <p>Ranking is the list of suppliers that sets the order in which suppliers are used before consuming the next supplier’s capacity. It is possible to have different rankings per construction type. For example, for shirts, supplier A is  ranked 1 and supplier B is ranked 2. Whereas, for ties supplier B is ranked 1 and supplier A is ranked 2. </p>
         <p>Each supplier can have multiple construction types and multiple construction groups associated with them. For example,</p>
         <ul>
             <li>
@@ -430,14 +430,14 @@ While the construction code is very specific, the actual supplier constraint is 
         <p>Should a product not have an Attribute associated with it then the new macro, <span class="Emphasis">Apply Supplier Production Limitation</span>, available for Supplier orders in Order Manager will not be applied and supply will not be constrained. The macro requires a product’s Attribute to be associated with a construction type in order to constrain by that construction type. Without that association, there is no link to the particular macro and supply cannot be constrained.</p>
         <p class="BasicNote">The Attribute needs to be set prior to creating purchase orders.</p>
         <h3>Reviewing suppliers associated with Attributes</h3>
-        <p>A new blade labeled <span class="Emphasis">Supplier Capacity Report</span> has been added to the main view in the Supplier Manager module. Selecting a supplier in the top grid refreshes the blade to display the Attributes associated with the supplier. Within the <span class="Emphasis">Supplier Capacity Report</span>, users define the production capacity (what the supplier can make and how much they can make) for each Attribute for a time period. Construction type is an Attribute of the supplier and it's also an Attribute of items and is not a level of the hierarchy.</p>
+        <p>A new blade labeled <span class="Emphasis">Supplier Capacity Report</span> has been added to the main view in the Supplier Manager module. Selecting a supplier in the top grid refreshes the blade to display the Attributes associated with the supplier. Within the <span class="Emphasis">Supplier Capacity Report</span>, users define the production capacity (what the supplier can make and how much they can make) for each Attribute for a time period. Construction type is an Attribute of the supplier and is also an Attribute of items. Construction type is not a level of the hierarchy.</p>
         <p class="BasicNote">The supplier and the construction types that the supplier can provide are visible in a new blade within Order Manager labeled <span class="Emphasis">Supplier Capacity Report</span>. </p>
         <h3>Specifying capacities in time periods</h3>
-        <p>Additionally, a second blade, <span class="Emphasis">Supplier Construction Type Capacity</span>, has been added to the Supplier Manager module. </p>
+        <p>Additionally, a second blade, <span class="Emphasis">Supplier Construction Type Capacity</span>, has been added to the Supplier Manager module. This module shows a cross product of time buckets and construction type of the selected supplier. Users should use this module to define the production capacity of a supplier for the given time bucket.  If a time frame is left unedited, it is assumed the supplier has an unlimited capacity for the given time frame for that construction type.</p>
+        <p class="BasicNote">New system policy <span class="Emphasis">Supplier Constraint: Bucket Type</span> (Module: Order Manager) defines the time period to use for the supplier constraint. The bucket range is based on today and the value for existing system policy <span class="Emphasis">Future Days</span> (Engine: Forecasts).</p>
         <p>
             <img src="../../Resources/Images/Supplier/Supplier Construction Type Capacity Widget.png" class="LargeImages" />
         </p>
-        <p class="BasicNote">New system policy <span class="Emphasis">Supplier Constraint: Bucket Type</span> (Module: Order Manager) defines the time period to use for the supplier constraint. The bucket range is based on today and the value for existing system policy <span class="Emphasis">Future Days</span> (Engine: Forecasts).</p>
         <p>Only the <span class="Emphasis">Total Supplier Quantity</span> field is editable with all other columns being read-only. Planners can multi-select cells in the <span class="Emphasis">Total Supplier Quantity</span> field to specify the capacity in that bucket.</p>
         <h3>Supplier production constraints</h3>
         <p>When an order line is selected, the new <span class="Emphasis">Supplier Capacity Report </span> blade, which displays when the <span class="Emphasis">Details</span> toolbar button is clicked, populates with all the suppliers that have the order line’s construction type.  Planners can review how much production capacity is left for each supplier of the construction type and how much of the capacity is taken up by pending stock. Supply planners can also manage scenarios where all suppliers are unable to fulfill the order so that exceptions are managed effectively.</p>
