@@ -7,5 +7,21 @@
         <h2>Assortment Planning and Target Choice Count</h2>
         <h3>Aggregation changes to TY Act New Choice Count applying values across clusters evenly</h3>
         <p>Choice Count Aggregations in the Target Worksheet are no longer verifiable within the worksheet itself; the totals represent at true unique count of variants across segments, updates, and location. The unique counts can be verified by data in the Data Cleansing and Choices By Update reports.</p>
+        <h2>Merchandise Financial Planning</h2>
+        <p>Previously, calculating Actual EOP DC Split included On Order data, but this was incorrect as On Order is separately tracked. Now, On Order is no longer included as part of Actual EOP DC Split.</p>
+        <p>Also, the metric Available On Hand (Available On Hand = On Order + Stock On Hand + Reserved - Pending) was put into the Actual EOP DC Split value.</p>
+        <p>However, the Reserved and Pending values were not looked up meaning only On Order and Stock On Hand were used. Now, the Available On Hand calculation actualizes into the MFP field <span class="Emphasis">Available On Hand</span>, and the sum of Stock On Hand and Reserved actualizes into Actual EOP DC Split.</p>
+        <p>Both Reserved and Pending are now controlled via the following new system policies (the default is excluded from calculation):</p>
+        <ul>
+            <li>
+                <p><span class="Emphasis">DC Stock Include Pending</span>
+                </p>
+            </li>
+            <li>
+                <p><span class="Emphasis">DC Stock Include Reserved</span>
+                </p>
+            </li>
+        </ul>
+        <p>Both system policies can be enabled (separately) to be incorporated into the Actual EOP DC Split and Available On Hand fields.</p>
     </body>
 </html>
