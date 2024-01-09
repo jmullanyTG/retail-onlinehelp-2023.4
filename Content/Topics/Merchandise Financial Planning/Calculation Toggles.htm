@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" xml:lang="en-us">
     <head>
         <link href="../../Resources/TableStyles/standard.css" rel="stylesheet" MadCap:stylesheetType="table" /><title></title>
@@ -54,6 +54,15 @@ However, if changing Sales users must consider the calculation toggle settings f
             <img src="../../Resources/Images/MFP/Calc Toggle Sales to Target BOP Hold Target BOP.PNG" class="LargeImages" />
         </p>
         <h2>Calculation toggles</h2>
+        <p>Dynamic renaming of particular metrics is in place to support the use of these values in either a Retail or Wholesale context. When viewing:</p>
+        <ul>
+            <li>
+                <p>Wholesale channels only: <span class="Emphasis">Sales Units</span> is replaced with <span class="Emphasis">Booked Units</span>, <span class="Emphasis">AUR</span> is replaced with <span class="Emphasis">ASP</span>, and <span class="Emphasis">Total Original Retail</span> is replaced with <span class="Emphasis">Booked At Wholesale</span>.</p>
+            </li>
+            <li>
+                <p>Retail and Wholesale channels simultaneously: <span class="Emphasis">Sales Units</span> is replaced with <span class="Emphasis">Sales Units / Booked Units</span>, <span class="Emphasis">AUR</span> is replaced with <span class="Emphasis">AUR / ASP</span>, and <span class="Emphasis">Total Original Retail</span> is replaced with <span class="Emphasis">Total Original Retail / Booked At Wholesale</span>.</p>
+            </li>
+        </ul>
         <table xmlns="http://www.w3.org/1999/xhtml" style="margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/standard.css');" class="TableStyle-standard" cellspacing="0">
             <col class="TableStyle-standard-Column-Column1" xmlns="" style="width: 10%;" />
             <col class="TableStyle-standard-Column-Column2" xmlns="" style="width: 10%;" />
@@ -62,7 +71,7 @@ However, if changing Sales users must consider the calculation toggle settings f
             <col class="TableStyle-standard-Column-Column1" xmlns="" style="width: 25%;" />
             <thead xmlns="">
                 <tr class="TableStyle-standard-Head-Header1">
-                    <th class="TableStyle-standard-HeadE-Column1-Header1">Metric</th>
+                    <th class="TableStyle-standard-HeadE-Column1-Header1"> Metric</th>
                     <th class="TableStyle-standard-HeadE-Column2-Header1">Direction</th>
                     <th class="TableStyle-standard-HeadE-Column1-Header1">Dual Markdown</th>
                     <th class="TableStyle-standard-HeadE-Column2-Header1">Cost</th>

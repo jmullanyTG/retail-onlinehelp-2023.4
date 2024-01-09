@@ -40,6 +40,9 @@
         Link="/Content/Topics/Multi-Module Technical Content/Inventory Level Archive tables.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"
+        Link="/Content/Topics/Merchandise Financial Planning/Source Forecast Level Data.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+      <TocEntry
+        Title="[%=System.LinkedTitle%]"
         Link="/Content/Topics/Merchandise Financial Planning/Define the Global Groups.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
       <TocEntry
         Title="[%=System.LinkedTitle%]"

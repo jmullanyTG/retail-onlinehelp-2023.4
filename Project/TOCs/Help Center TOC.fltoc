@@ -114,6 +114,9 @@
               Link="/Content/Topics/Merchandise Financial Planning/Technical Note on Customizations.htm" />
             <TocEntry
               Title="[%=System.LinkedTitle%]"
+              Link="/Content/Topics/Merchandise Financial Planning/Source Forecast Level Data.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+            <TocEntry
+              Title="[%=System.LinkedTitle%]"
               Link="/Content/Topics/Merchandise Financial Planning/Define the Global Groups.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
             <TocEntry
               Title="[%=System.LinkedTitle%]"
@@ -1106,6 +1109,9 @@
             <TocEntry
               Title="[%=System.LinkedTitle%]"
               Link="/Content/Topics/Inventory Forecasts/Using machine learning to improve forecasting.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+            <TocEntry
+              Title="[%=System.LinkedTitle%]"
+              Link="/Content/Topics/Inventory Forecasts/Using Tournament Winning Forecast Values.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
             <TocEntry
               Title="[%=System.LinkedTitle%]"
               Link="/Content/Topics/Inventory Forecasts/Forecasts module dependencies.htm">

@@ -21,6 +21,14 @@
                     <td class="TableStyle-standard-BodyD-Column2-Body1">How many days approved snapshots are kept in the system. Default = 720.</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">DC Stock Include Pending</td>
+                    <td class="TableStyle-standard-BodyD-Column2-Body1">Whether to reduce DC Available On Hand by Pending stock.</td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">DC Stock Include Reserved</td>
+                    <td class="TableStyle-standard-BodyD-Column2-Body1">Whether to include Reserved stock in the EOP Units DC Split and DC Available On Hand metrics.</td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">DC Stock Splits future number of periods
 </td>
                     <td class="TableStyle-standard-BodyD-Column2-Body1">Number of periods forward from the current period to determine % DC stock splits by channel. Default = 8.</td>
@@ -65,6 +73,10 @@
                     <td class="TableStyle-standard-BodyD-Column2-Body1">
                          Whether or not DC inventory is shared among all channels. (Are receipts planned for specific channels or not?) Default = False. 
                         <ul><li>True = Share DC&#160;inventory across channels.</li><li>False = Do not share DC&#160;inventory across channels.</li></ul></td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">Forecast Source</td>
+                    <td class="TableStyle-standard-BodyD-Column2-Body1">Dictates which source of Forecast data to use - Inventory forecasts or aggregated level forecasts.  Level data should be chosen to expedite performance, but only if forecast jobs are set up to maintain hierarchy level data.</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">MFP Plan Size Threshold</td>
