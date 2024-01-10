@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
     <head>
+        <link href="../../Resources/TableStyles/standard.css" rel="stylesheet" MadCap:stylesheetType="table" />
     </head>
     <body>
         <h1>Assortment Planning</h1>
@@ -11,5 +12,44 @@
         <p>Formatting has been added to the <span class="Emphasis">Receipt Plan</span> view and the <span class="Emphasis">Sales Plan</span> view so that the <span class="Emphasis">Stock To Sales</span> column will have red text if the value is below the default lower threshold or above the default upper threshold.</p>
         <h2>Viewing Product Code and/or Product Description in product hierarchy dropdown</h2>
         <p>The product selection dropdown in Placeholder and Collection views can be configured to display 1. just the product description, 2. just the product code, or 3. the product code and description. Which fields to display is set using system policy <span class="Emphasis">Product Level Display</span> (Module: Assortment).</p>
+        <h2>Setting product hierarchy &amp; time based default AUT/AUR relationship</h2>
+        <p>New metric <span class="Emphasis">AUT&#160;Discount %</span> can be used to configure a hierarchy default and/or a time-based hierarchy default setting a Discount rate or promotion rate which is then applied against the AUT and updates the planned AUR. This eliminates the need to plan the AUR.</p>
+        <table style="width: 100%;mc-table-style: url('../../Resources/TableStyles/standard.css');" class="TableStyle-standard" cellspacing="0">
+            <col class="TableStyle-standard-Column-Column1" style="width: 10%;" />
+            <col class="TableStyle-standard-Column-Column2" style="width: 10%;" />
+            <col class="TableStyle-standard-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-standard-Head-Header1">
+                    <th class="TableStyle-standard-HeadE-Column1-Header1">Name</th>
+                    <th class="TableStyle-standard-HeadE-Column2-Header1">Added to</th>
+                    <th class="TableStyle-standard-HeadD-Column1-Header1">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">AUT Discount %</td>
+                    <td class="TableStyle-standard-BodyE-Column2-Body1">
+                        Sales Plan
+                        <p>Top Down Core Plan</p></td>
+                    <td class="TableStyle-standard-BodyD-Column1-Body1">Impacts how AUR is derived from AUT. The percent discount is taken first, and then the rest of the calculations proceed from there, namely applying VAT rates, price exceptions, and promotions.  This metric averages across time and is editable in future periods.</td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyB-Column1-Body1">AUT/AUR Var %</td>
+                    <td class="TableStyle-standard-BodyB-Column2-Body1">
+                        <p>Sales Plan</p>
+                    </td>
+                    <td class="TableStyle-standard-BodyA-Column1-Body1">The percent difference between AUT and AUR showing the actual difference between those metrics.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The defaults are applied to new placeholders and/or new periods for placeholders whenever they are created.</p>
+        <p><span class="Emphasis">AUT Discount %</span> as a hierarchy default:</p>
+        <p>
+            <img src="AUT Discount Percent.PNG" class="LargeImages" />
+        </p>
+        <p><span class="Emphasis">AUT Discount %</span> can also be defaulted by period, alongside Minimum Presentation:</p>
+        <p>
+            <img src="AUT Discount Percent Time.PNG" class="LargeImages" />
+        </p>
     </body>
 </html>
