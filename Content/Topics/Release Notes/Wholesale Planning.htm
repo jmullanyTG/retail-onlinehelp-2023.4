@@ -388,6 +388,121 @@
         <p>
             <img src="../../Resources/Images/Wholesale Planning/Sites and Customer Accounts Mixed.png" class="LargeImages" />
         </p>
+        <h2>Assortment Planning</h2>
+        <p>The following wholesale metrics have been added to the main planning view and the Cluster Sets view:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>
+                                <p>Discount %</p>
+                            </li>
+                            <li>
+                                <p>At Once ($)</p>
+                            </li>
+                            <li>
+                                <p>At Once (U)</p>
+                            </li>
+                            <li>
+                                <p>Cancel %</p>
+                            </li>
+                            <li>
+                                <p>Bookings Cancelled ($)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Cancelled (U)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Placed ($)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Placed (U)</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <p>Bookings Shipped ($)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Shipped (U)</p>
+                            </li>
+                            <li>
+                                <p>Sell Out ($)</p>
+                            </li>
+                            <li>
+                                <p>Sell Out (U)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Shipped/Sell Out Var</p>
+                            </li>
+                            <li>
+                                <p>Bookings Shipped/Sell Out Var %</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>
+            <img src="../../Resources/Images/Assortment Planning/Wholesale Metrics MPV.png" class="LargeImages" />
+        </h3>
+        <h3>Metric notes</h3>
+        <p>For plans with:</p>
+        <ul>
+            <li>
+                <p>only Wholesale lines then the terms <span class="Emphasis">Sales</span>, <span class="Emphasis">Sls</span>, and <span class="Emphasis">AUR</span> are renamed to <span class="Emphasis">Bookings</span>, <span class="Emphasis">Bk</span>, <span class="Emphasis">ASP</span> respectively.</p>
+                <p>
+                    <img src="../../Resources/Images/Assortment Planning/Wholesale Lines Only Naming.png" class="LargeImages" />
+                </p>
+            </li>
+            <li>
+                <p>a mix of Wholesale and Retail lines then the terms <span class="Emphasis">Sales</span>, <span class="Emphasis">Sls</span>, and <span class="Emphasis">AUT</span> are renamed to <span class="Emphasis">Bookings</span>, <span class="Emphasis">Bk</span>, <span class="Emphasis">ASP</span> respectively.</p>
+            </li>
+            <li>
+                <p>only Wholesale lines then the terms <span class="Emphasis">Sales</span>, <span class="Emphasis">Sls</span>, and <span class="Emphasis">AUR</span> are renamed to <span class="Emphasis">Sales/Bookings</span>, <span class="Emphasis">Sls/Bk</span>, <span class="Emphasis">AUR/ASP</span> respectively.</p>
+                <p>
+                    <img src="../../Resources/Images/Assortment Planning/Wholesale Lines Metric Renaming.png" class="LargeImages" />
+                </p>
+            </li>
+        </ul>
+        <h3>Editability</h3>
+        <ul>
+            <li>
+                <p>Discount %, At Once $/U, Cancel %, Cancelled $/U are all editable when the line is a wholesale line or have an underlying Cluster Set that is wholesale.</p>
+            </li>
+            <li>
+                <p>All the Wholesale fields are non-editable if the line does not have any Wholesale Cluster Sets.</p>
+            </li>
+            <li>
+                <p>Cancel %, Cancelled $/U are non-editable after actualization begins.</p>
+            </li>
+        </ul>
+        <p>The <span class="Emphasis">Wholesale</span> check box is purely informational and indicates a line is wholesale.</p>
+        <h3>Calculations</h3>
+        <p>Amending:</p>
+        <ul>
+            <li>
+                <p>At Once $ recalculates At Once U and vice versa.</p>
+            </li>
+            <li>
+                <p>Cancel % recalculates Cancelled $ and Cancelled U</p>
+            </li>
+            <li>
+                <p>Cancelled $ recalculates Cancelled U and Cancelled %</p>
+            </li>
+            <li>
+                <p>Cancelled U recalculates Cancelled $ and Cancelled %</p>
+            </li>
+            <li>
+                <p>AUT recalculates Cancelled $</p>
+            </li>
+        </ul>
+        <p>Any amendment that affects Sales Units and/or Total Bookings recalculates Cancelled U and Cancelled %.</p>
         <h2>Inventory Manager</h2>
         <p>Wholesale Accounts can be easily identified within an Inventory Manager document. Select <span class="Emphasis">Choose</span> on the toolbar and include <span class="Emphasis">Site Type</span> from the <span class="Emphasis">Site Type</span> metadata group. The <span class="Emphasis">Site Type</span> column displays <span class="Emphasis">Account</span> for wholesale accounts.</p>
         <p>
