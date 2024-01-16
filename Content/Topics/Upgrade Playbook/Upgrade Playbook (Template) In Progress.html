@@ -980,15 +980,15 @@ foreach ($Node in $computeNodes) {
         <ol>
             <li><a href="https://toolsgroup-dev.atlassian.net/l/cp/VQvwPmAj">Installation Guidelines</a>
             </li>
-            <li>
-                <p>Currently we rely on clr being enabled on a SQL server, running the following query will result in an error if it’s not enabled.</p>
-                <p>
-                    <MadCap:codeSnippet>
-                        <MadCap:codeSnippetCopyButton />
-                        <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">SELECT * FROM dbo.clr_Common_ParseString(REPLACE('1', '"', ''));</MadCap:codeSnippetBody>
-                    </MadCap:codeSnippet>
-                </p>
-            </li>
         </ol>
+        <p>
+            <p>Currently we rely on clr being enabled on a SQL server, running the following query will result in an error if it’s not enabled.</p>
+            <p>
+                <MadCap:codeSnippet>
+                    <MadCap:codeSnippetCopyButton />
+                    <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">SELECT * FROM dbo.clr_Common_ParseString(REPLACE('1', '"', ''));</MadCap:codeSnippetBody>
+                </MadCap:codeSnippet>
+            </p>
+        </p>
     </body>
 </html>
