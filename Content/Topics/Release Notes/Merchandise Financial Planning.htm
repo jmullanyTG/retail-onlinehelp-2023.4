@@ -5,7 +5,7 @@
     <body>
         <h1>Merchandise Financial Planning</h1>
         <h2>Verifying which plans are Default and which are Original Plan</h2>
-        <p>A new <span class="Emphasis">Plan Sub Type Name</span> column has been added as an available column to the <span class="Emphasis">Financial Plan Maintenance</span> screen to supplement <span class="Emphasis">Plan Name</span>, <span class="Emphasis">Plan Description</span>, <span class="Emphasis">Plan Type Name</span>, and <span class="Emphasis">Plan Status Name</span>. The new column allows users to quickly and easily see which plans are Default and which are Original Plan.</p>
+        <p>A new <span class="Emphasis">Plan Sub Type Name</span> column has been added as an available column to the <span class="Emphasis">Financial Plan Maintenance</span> screen to supplement <span class="Emphasis">Plan Name</span>, <span class="Emphasis">Plan Description</span>, <span class="Emphasis">Plan Type Name</span>, and <span class="Emphasis">Plan Status Name</span>. The new column allows users to quickly and easily see which plans are Default and which are Original Plans.</p>
         <p>
             <img src="../../Resources/Images/MFP/Plan Sub Type Name column.png" class="LargeImages" />
         </p>
@@ -20,7 +20,7 @@
             <img src="Rebalance Dialog Measure Set Field.png" class="LargeImages" />
         </p>
         <p>Only the metrics selected for rebalance are affected within the destination plan. Any metrics unselected retain the values of the destination plan. As such, it is important to select all related metrics within a metric set for rebalance. </p>
-        <p>For example, when rebalancing Receipts, a user should check all of the Target Receipt metric checkboxes for the full set of data to rebalance. Selecting only <span class="Emphasis">Receipt Retail</span> and <span class="Emphasis">Receipt Units</span> without <span class="Emphasis">Receipt Cost</span> applies the <span class="Emphasis">Receipt Cost</span> of the destination plan to the newly copied <span class="Emphasis">Receipt Retail</span> and <span class="Emphasis">Receipt Units</span> values from the source plan, resulting in a newly calculated Receipt margin. Similarly, by not selecting <span class="Emphasis">Receipt Units</span>, the Receipt AUR and Receipt AUC values will not be direct copies as the <span class="Emphasis">Receipt Units</span> values in the destination plan become the divisor.</p>
+        <p>For example, when rebalancing Receipts, a user should check all of the Target Receipt metric checkboxes for the full set of data to rebalance. Selecting only <span class="Emphasis">Receipt Retail</span> and <span class="Emphasis">Receipt Units</span> without <span class="Emphasis">Receipt Cost</span> applies the <span class="Emphasis">Receipt Cost</span> of the destination plan to the newly copied <span class="Emphasis">Receipt Retail</span> and <span class="Emphasis">Receipt Units</span> values from the source plan, resulting in a newly calculated Receipt margin. Similarly, by not selecting <span class="Emphasis">Receipt Units</span>, the <span class="Emphasis">Receipt AUR</span> and <span class="Emphasis">Receipt AUC</span> values will not be direct copies as the <span class="Emphasis">Receipt Units</span> values in the destination plan become the divisor.</p>
         <p class="BasicNote">Rebalance functionality has not changed with the addition of this feature.</p>
         <h3>Notes:</h3>
         <ul>
@@ -28,13 +28,13 @@
                 <p>If a measure set is picked along with any of the <span class="Emphasis">Sales</span> / <span class="Emphasis">Sales Units</span> / <span class="Emphasis">COGS</span> / <span class="Emphasis">Receipt Retail</span> / <span class="Emphasis">Receipt Units</span> / <span class="Emphasis">Receipt Cost</span> checkboxes, it is the measure set that is copied and not the Sales and Receipt specific metrics even if the Sales and Receipt checkboxes are selected.</p>
             </li>
             <li>
-                <p>Any values shown in the new Rebalance plan apply a SourceToTargetMultiplier congruent with ration of Sales / Total Sales within the mapping logic between plans.</p>
+                <p>When the Sales within the Source and Destination plan are not equal, the ratio of Source Plan Sales and Destination Plan Sales will be applied against other values being copied.</p>
             </li>
             <li>
                 <p>Rebalance plans are only created with the time periods specified in the <span class="Emphasis">Rebalance Plan</span> screen.</p>
             </li>
             <li>
-                <p>Within the <span class="Emphasis">Hybrid Retail Dual Markdown</span> plan type, there are metrics with rolling calculations using the designated (checked) Season Begin period. If the source and destination plans do not have the same Season Begin period, there will be some drift in these rolling metrics, one of note being BOP Retail.</p>
+                <p>Within the <span class="Emphasis">Hybrid Retail Dual Markdown</span> plan type, there are metrics with rolling calculations using the designated (checked) Season Begin period. If the source and destination plans do not have the same Season Begin period, there will be some drift in these rolling metrics, two of note include, <span class="Emphasis">BOP Retail</span> and <span class="Emphasis">COGS</span>.</p>
             </li>
         </ul>
     </body>
