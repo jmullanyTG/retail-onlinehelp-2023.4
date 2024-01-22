@@ -70,14 +70,15 @@
         <p>There is a new Cluster Type in the Site Clustering Module labeled <span class="Emphasis">Wholesale Account Cluster</span>. How sites are selected remains unchanged and is the same as with the other previously existing Cluster Types. Users do not select or create wholesale account clusters within the UI as these are automatically created within the import process. However, users will need to open new wholesale account cluster sets and click <span class="Emphasis">Calculate</span> to assign the correct clusters. The result is Cluster Sets that have the correct Clusters assignments with a 1:1 Cluster to Site relationship. Snapshots continue as normal.</p>
         <p class="BasicNote">Editing a Cluster Set will show the Classifications created.</p>
         <h2>Merchandise Financial Planning</h2>
-        <p>As noted, rather than creating separate MFP plans for Wholesale and Retail, the TG JE structure supports wholesale as a channel within the total company plan. Within MFP, TG JE v2023.4 introduces a new <span class="Emphasis">Wholesale</span> Channel. The <span class="Emphasis">Wholesale</span> Channel can be included in a hierarchy along with sub-channel hierarchies beneath <span class="Emphasis">Wholesale</span> for use in individual plans by account.</p>
+        <p>As noted, rather than creating separate MFP plans for Wholesale and Retail, the TG JE structure supports wholesale as a channel within the total company plan. This allows users to include sites with a site type of Account. The channel name will be whatever name is included in the Site Group 1 - 20 metadata.</p>
+        <p>The wholesale channel can be included in a hierarchy, along with sub-channel hierarchies beneath the wholesale channel, for use in individual plans by account.</p>
         <h3>Including wholesale totals in the hierarchy</h3>
-        <p>If the desired functionality is to include wholesale accounts in MFP but not plan them individually, then all that is necessary to do is include the Channel group in the MFP hierarchy configuration (or whichever Site Group indicates which sites are Retail and which are Accounts). Then Wholesale will be available when hierarchies are generated.</p>
+        <p>If the desired functionality is to include wholesale accounts in MFP but not plan them individually, then all that is necessary to do is include the Channel group in the MFP hierarchy configuration (or whichever Site Group indicates which sites are Retail and which are Accounts). Then the wholesale channel will be available when hierarchies are generated.</p>
         <h3>Including Individual wholesale accounts in the hierarchy</h3>
-        <p>To include Wholesale in the Channel Hierarchy, the following steps must be taken:</p>
+        <p>To include wholesale in the Channel hierarchy, the following steps must be taken:</p>
         <ol>
             <li>
-                <p>One of the Site Groups 1 - 20 should be used to represent each wholesale account.  For example, <span class="Emphasis">Site Group 7</span> is given the friendly name <span class="Emphasis">Wholesale Account</span>.</p>
+                <p>One of the Site Groups 1 - 20 should be used to represent each wholesale account.  For example, <span class="Emphasis">Site Group 7</span> is given a friendly name such as <span class="Emphasis">Wholesale Account</span>.</p>
                 <p>
                     <img src="../../Resources/Images/Wholesale Planning/Site Group Representing Wholesale Account.PNG" class="LargeImages" />
                 </p>
@@ -93,11 +94,11 @@
                 </p>
             </li>
         </ol>
-        <p>Users can then view individual Wholesale Accounts in the MFP hierarchy.</p>
+        <p>Users can then view individual wholesale accounts in the MFP hierarchy.</p>
         <p>
             <img src="../../Resources/Images/Wholesale Planning/View Wholesale Accounts Maintain Financial Plan.PNG" class="LargeImages" />
         </p>
-        <h3>New metrics supporting the Wholesale channel</h3>
+        <h3>New metrics supporting the wholesale channel</h3>
         <p>In addition to following standard formatting, these new metrics conform to the existing MFP metric nomenclature.</p>
         <h4>Notes</h4>
         <p>All the below metrics have:</p>
@@ -455,13 +456,13 @@
         <p>For plans with:</p>
         <ul>
             <li>
-                <p>wholesale Lines - Sales, Sls and AUR renamed to Bookings, BK and ASP.</p>
+                <p>wholesale lines - Sales, Sls and AUR renamed to Bookings, BK and ASP.</p>
                 <p>
                     <img src="../../Resources/Images/Assortment Planning/Wholesale Lines Only Naming.png" class="LargeImages" />
                 </p>
             </li>
             <li>
-                <p>mixed Wholesale and Retail - Sales, Sls and AUT renamed to Sales/Bookings, Sls/Bk and AUR/ASP.</p>
+                <p>mixed wholesale and retail - Sales, Sls and AUT renamed to Sales/Bookings, Sls/Bk and AUR/ASP.</p>
                 <p>
                     <img src="../../Resources/Images/Assortment Planning/Wholesale Lines Metric Renaming.png" class="LargeImages" />
                 </p>
