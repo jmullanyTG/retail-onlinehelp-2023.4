@@ -13,7 +13,7 @@
 </p>
         <p>These Release Notes are crafted to keep Wholesale-related functionality grouped together; structured as a logical progression through the planning and execution processes. It is important to keep in mind that the enhancements noted in this section, are also visible in the standard retail modules, as applicable.</p>
         <h2>Establishing Wholesale Customer to Wholesale Account Relationships</h2>
-        <h3>Using customer orders as sales history for Customers <MadCap:conditionalText MadCap:conditions="General.DoNotPublish">DMDEV-88190</MadCap:conditionalText></h3>
+        <h3>Using customer orders as sales history for Customers </h3>
         <p>From the Wholesale perspective, “sales” can be viewed in two ways within TG JE: </p>
         <ol>
             <li>
@@ -473,7 +473,7 @@
                 <p>Discount %, At Once $/U, Cancel %, Cancelled $/U are all editable when the line is a wholesale line or has an underlying Cluster Set that is wholesale.</p>
             </li>
             <li>
-                <p>All the Wholesale fields are non-editable if the line does not have any Wholesale Cluster Sets.</p>
+                <p>All the wholesale fields are non-editable if the line does not have any Wholesale Cluster Sets.</p>
             </li>
             <li>
                 <p>Cancel %, Cancelled $/U are non-editable after actualization begins.</p>
@@ -545,7 +545,7 @@ While the construction code is very specific, the actual supplier constraint is 
         <p>A new blade labeled <span class="Emphasis">Supplier Capacity Report</span> has been added to the main view in the Supplier Manager module. Selecting a supplier in the top grid refreshes the blade to display the Attributes associated with the supplier. Within the <span class="Emphasis">Supplier Capacity Report</span>, users define the production capacity (what the supplier can make and how much they can make) for each Attribute for a time period. Construction type is an Attribute of the supplier and is also an Attribute of items. Construction type is not a level of the hierarchy.</p>
         <p class="BasicNote">The supplier and the construction types that the supplier can provide are visible in a new blade within Order Manager labeled <span class="Emphasis">Supplier Capacity Report</span>. </p>
         <h3>Specifying capacities in time periods</h3>
-        <p>Additionally, a second blade, <span class="Emphasis">Supplier Construction Type Capacity</span>, has been added to the Supplier Manager module. This module shows a cross product of time buckets and construction type of the selected supplier. Users should use this module to define the production capacity of a supplier for the given time bucket.  If a time frame is left unedited, it is assumed the supplier has an unlimited capacity for the given time frame for that construction type.</p>
+        <p>Additionally, a second blade, <span class="Emphasis">Supplier Construction Type Capacity</span>, has been added to the Supplier Manager module. This blade shows a cross product of time buckets and construction type of the selected supplier. Users should use this blade to define the production capacity of a supplier for the given time bucket.  If a time frame is left unedited, it is assumed the supplier has an unlimited capacity for the given time frame for that construction type.</p>
         <p class="BasicNote">New system policy <span class="Emphasis">Supplier Constraint: Bucket Type</span> (Module: Order Manager) defines the time period to use for the supplier constraint. The bucket range is based on today and the value for existing system policy <span class="Emphasis">Future Days</span> (Engine: Forecasts).</p>
         <p>
             <img src="../../Resources/Images/Supplier/Supplier Construction Type Capacity Widget.png" class="LargeImages" />

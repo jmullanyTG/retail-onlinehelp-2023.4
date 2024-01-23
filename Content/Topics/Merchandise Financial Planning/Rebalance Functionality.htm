@@ -27,31 +27,28 @@
         <p>COGS cannot be copied over between cost based plans and retail based plans during a rebalance. They are calculated and used differently in the different plan types. COGS is a ratio of BOP and Sales in the Retail method, but not in the Cost method. Inventory metrics are not copied during a rebalance.</p>
         <h3>All other dependent metrics</h3>
         <p>All other dependent metrics in the Destination Plan recalculate per the normal calculations defined  for the appropriate plan type, Cost or Retail. For more information regarding the calculations, see <MadCap:xref href="Merchandise Financial Planning Metrics List.htm">Merchandise financial planning metrics list</MadCap:xref>.</p>
-        <h2 MadCap:conditions="General.DoNotPublish">Rebalancing example</h2>
-        <p MadCap:conditions="General.DoNotPublish">The Sales metric is the only Source Plan metric selected in the <span class="Emphasis">Rebalance Plan</span> dialog. The Source Plan metrics Sales Units and COGS are not selected and will not impact the Destination Plan. AUR and AUC will recalculate.</p>
-        <p MadCap:conditions="General.DoNotPublish" class="BasicNote">To copy a metric, select the appropriate checkbox. If the requisite checkbox is not selected, then the Source Plan does not cause a change in the corresponding metric in the Destination Plan. AURs and AUCs change to reflect the new ratios. </p>
-        <h3 MadCap:conditions="General.DoNotPublish">Source Plan</h3>
-        <p MadCap:conditions="General.DoNotPublish">The Source Plan is a Location Plan called <span class="Emphasis">Branch - Location Plan</span>. <span class="Emphasis">Branch - Location Plan</span> has Sales Units = 574 and COGS = 11,679.</p>
-        <p MadCap:conditions="General.DoNotPublish">
-            <img src="../../Resources/Images/MFP/Location Branch Rebalance.PNG" class="LargeImages" />
+        <h2>Rebalancing metrics based on configured measure sets</h2>
+        <p>Users can rebalance metrics based on configured measure sets that display in the <span class="Emphasis">Measure Set</span> dropdown. It is important to note that the <span class="Emphasis">Measure Set</span> dropdown only displays measure sets relevant to the selected plan type and rebalancing should only occur between plans of the same plan type.  Only the metrics selected for rebalance are affected within the destination plan. Any metrics unselected retain the values of the destination plan, therefore, it's important to select all related metrics within a metric set for rebalance. </p>
+        <p>
+            <img src="../Release Notes/Rebalance Dialog Measure Set Field.png" class="LargeImages">
+            </img>
         </p>
-        <h3 MadCap:conditions="General.DoNotPublish">Destination Plan</h3>
-        <p MadCap:conditions="General.DoNotPublish">The Destination Plan is a Hybrid Cost Plan called <span class="Emphasis">Branch of Hybrid Cost Plan</span>. <span class="Emphasis">Branch of Hybrid Cost Plan</span> has Sales Units = 15,291 and COGS = 300,978.</p>
-        <p MadCap:conditions="General.DoNotPublish">
-            <img src="../../Resources/Images/MFP/Hybrid Cost Branch Rebalance.PNG" class="LargeImages" />
-        </p>
-        <p MadCap:conditions="General.DoNotPublish">If initiating a rebalance with <span class="Emphasis">Branch - Location Plan</span> as the Source and <span class="Emphasis">Branch of Hybrid Cost Plan</span> as the Destination. Only the <span class="Emphasis">Sales</span> checkbox is selected from the rebalance metrics.</p>
-        <p MadCap:conditions="General.DoNotPublish">After the rebalance is complete, a new plan labeled <span class="Emphasis">Rebalance Branch: Branch of Hybrid Cost Plan</span> is generated. </p>
-        <h3 MadCap:conditions="General.DoNotPublish">Rebalanced metrics </h3>
-        <p MadCap:conditions="General.DoNotPublish">The rebalance metrics are as follows:</p>
-        <ul MadCap:conditions="General.DoNotPublish">
-            <li>Sales has been recalculated as a result of the Sales metric being selected in the <span class="Emphasis">Rebalance Plan</span> dialog</li>
-            <li>Destination Plan <span class="Emphasis">Branch of Hybrid Cost Plan</span>’s metrics Sales Units and COGS are unchanged as these metrics were not selected</li>
-            <li>AUR and AUC have been recalculated. </li>
+        <p>For example, when rebalancing Receipts, a user should check all of the Target Receipt metric checkboxes for the full set of data to rebalance. Selecting only <span class="Emphasis">Receipt Retail</span> and <span class="Emphasis">Receipt Units</span> without <span class="Emphasis">Receipt Cost</span> applies the <span class="Emphasis">Receipt Cost</span> of the destination plan to the newly copied <span class="Emphasis">Receipt Retail</span> and <span class="Emphasis">Receipt Units</span> values from the source plan, resulting in a newly calculated Receipt margin. Similarly, by not selecting <span class="Emphasis">Receipt Units</span>, the <span class="Emphasis">Receipt AUR</span> and <span class="Emphasis">Receipt AUC</span> values will not be direct copies as the <span class="Emphasis">Receipt Units</span> values in the destination plan become the divisor.</p>
+        <h3>Notes:</h3>
+        <ul>
+            <li>
+                <p>If a measure set is picked along with any of the <span class="Emphasis">Sales</span> / <span class="Emphasis">Sales Units</span> / <span class="Emphasis">COGS</span> / <span class="Emphasis">Receipt Retail</span> / <span class="Emphasis">Receipt Units</span> / <span class="Emphasis">Receipt Cost</span> checkboxes, it is the measure set that is copied and not the Sales and Receipt specific metrics even if the Sales and Receipt checkboxes are selected.</p>
+            </li>
+            <li>
+                <p>When the Sales within the Source and Destination plan are not equal, the ratio of Source Plan Sales and Destination Plan Sales is applied against other values being copied.</p>
+            </li>
+            <li>
+                <p>Rebalance plans are only created with the time periods specified in the <span class="Emphasis">Rebalance Plan</span> screen.</p>
+            </li>
+            <li>
+                <p>Within the <span class="Emphasis">Hybrid Retail Dual Markdown</span> plan type, there are metrics with rolling calculations using the designated (checked) Season Begin period. If the source and destination plans do not have the same Season Begin period, there will be some drift in these rolling metrics, two of note include, <span class="Emphasis">BOP Retail</span> and <span class="Emphasis">COGS</span>.</p>
+            </li>
         </ul>
-        <p MadCap:conditions="General.DoNotPublish">
-            <img src="../../Resources/Images/MFP/Rebalanced Plan.PNG" class="LargeImages" />
-        </p>
         <h2>Rebalance Plan dialog field descriptions</h2>
         <table style="width: 100%;margin-left: 0;margin-right: auto;mc-table-style: url('../../Resources/TableStyles/standard.css');" class="TableStyle-standard" cellspacing="0">
             <col class="TableStyle-standard-Column-Column1" />
@@ -91,7 +88,9 @@
                 <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1"><span class="Emphasis">Measure Set</span>
                     </td>
-                    <td class="TableStyle-standard-BodyD-Column2-Body1">A collection of metrics saved as a set to be applied during future rebalances.</td>
+                    <td class="TableStyle-standard-BodyD-Column2-Body1">
+                        A collection of metrics saved as a set to be applied during future rebalances. 
+                        <p class="BasicNote">Measure sets are configured in the <span class="Emphasis">Manage</span> &gt; <span class="Emphasis">Configuration</span> &gt; <span class="Emphasis">Merge Measure Sets</span> screen.</p></td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1"><span class="Emphasis">Sales</span>, <span class="Emphasis">Sales Units</span>, <span class="Emphasis">COGS</span></td>

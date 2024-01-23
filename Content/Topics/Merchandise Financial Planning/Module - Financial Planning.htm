@@ -5,8 +5,8 @@
     </head>
     <body>
         <h1>System policies related to the financial planning module</h1>
-        <table class="TableStyle-standard" cellspacing="0" style="mc-table-style: url('../../Resources/TableStyles/standard.css');margin-left: 0;margin-right: auto;">
-            <col class="TableStyle-standard-Column-Column1" />
+        <table class="TableStyle-standard" cellspacing="0" style="mc-table-style: url('../../Resources/TableStyles/standard.css');margin-left: 0;margin-right: auto;" MadCap:autosort="False">
+            <col class="TableStyle-standard-Column-Column1" MadCap:autosortPriority="0" MadCap:autosortDirection="ascending" />
             <col class="TableStyle-standard-Column-Column2" />
             <thead>
                 <tr class="TableStyle-standard-Head-Header1">
@@ -57,6 +57,12 @@
                     <td class="TableStyle-standard-BodyD-Column2-Body1">Number of days forward to populate the master plan where periods exist. Start date being the start of the current period. Default = 720.</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">Forecast Source</td>
+                    <td class="TableStyle-standard-BodyD-Column2-Body1">
+                     Dictates which source of Forecast data to use - Inventory forecasts or aggregated level forecasts.  
+                        <p class="BasicNote">Level data should be chosen to expedite performance, but only if forecast jobs are set up to maintain hierarchy level data.</p></td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">Include DC&#160;Stock Split into EOP / BOP</td>
                     <td class="TableStyle-standard-BodyD-Column2-Body1">Whether to include DC stock, which is split into channels during actualization, into the rolling EOP / BOP calculations.</td>
                 </tr>
@@ -75,14 +81,12 @@
                         <ul><li>True = Share DC&#160;inventory across channels.</li><li>False = Do not share DC&#160;inventory across channels.</li></ul></td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
-                    <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">Forecast Source</td>
-                    <td class="TableStyle-standard-BodyD-Column2-Body1">
-                     Dictates which source of Forecast data to use - Inventory forecasts or aggregated level forecasts.  
-                        <p class="BasicNote">Level data should be chosen to expedite performance, but only if forecast jobs are set up to maintain hierarchy level data.</p></td>
-                </tr>
-                <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">MFP Plan Size Threshold</td>
                     <td class="TableStyle-standard-BodyD-Column2-Body1">Set an arbitrary size threshold for comparison to a PlanID's number of Product/Channel/Period combinations.  Exceeding the threshold will result in running the process in the WorkManager Queue.</td>
+                </tr>
+                <tr class="TableStyle-standard-Body-Body1">
+                    <td class="TableStyle-standard-BodyE-Column1-Body1">MFP Restrict Editability To Admin</td>
+                    <td class="TableStyle-standard-BodyD-Column2-Body1">Restrict the editability of the following metrics to users in the Administrators group: Shrink % Of Sales, Target Receipt Freight, Season Begin.  A value of <span class="Emphasis">True</span> requires users to be administrators. A value of <span class="Emphasis">False</span> allows editability of these metrics for all users.</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">Multi Plan Seeding Merging
@@ -90,10 +94,6 @@
                     <td class="TableStyle-standard-BodyD-Column2-Body1">
                       Whether to allow seeding or merging from other plans. Default = False. 
                         <ul><li>True = Allow seeding and merging from other plans.</li><li>False = Do not allow seeding and merging from other plans.</li></ul></td>
-                </tr>
-                <tr class="TableStyle-standard-Body-Body1">
-                    <td class="TableStyle-standard-BodyE-Column1-Body1">MFP Restrict Editability To Admin</td>
-                    <td class="TableStyle-standard-BodyD-Column2-Body1">Restrict the editability of the following metrics to users in the Administrators group: Shrink % Of Sales, Target Receipt Freight, Season Begin.  A value of <span class="Emphasis">True</span> requires users to be administrators. A value of <span class="Emphasis">False</span> allows editability of these metrics for all users.</td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1" style="font-weight: normal;">Open Multiple Plans
