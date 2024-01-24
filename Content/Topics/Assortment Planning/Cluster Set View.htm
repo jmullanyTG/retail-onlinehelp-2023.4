@@ -83,6 +83,119 @@
                 </tr>
             </tbody>
         </table>
+        <h2>Wholesale related metrics</h2>
+        <p>The following wholesale related metrics are available in the main planning view and the Cluster Sets view:</p>
+        <table style="width: 100%;">
+            <col />
+            <col />
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>
+                                <p>Discount %</p>
+                            </li>
+                            <li>
+                                <p>At Once ($)</p>
+                            </li>
+                            <li>
+                                <p>At Once (U)</p>
+                            </li>
+                            <li>
+                                <p>Cancel %</p>
+                            </li>
+                            <li>
+                                <p>Bookings Cancelled ($)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Cancelled (U)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Placed ($)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Placed (U)</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>
+                                <p>Bookings Shipped ($)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Shipped (U)</p>
+                            </li>
+                            <li>
+                                <p>Sell Out ($)</p>
+                            </li>
+                            <li>
+                                <p>Sell Out (U)</p>
+                            </li>
+                            <li>
+                                <p>Bookings Shipped/Sell Out Var</p>
+                            </li>
+                            <li>
+                                <p>Bookings Shipped/Sell Out Var %</p>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <img src="../../Resources/Images/Assortment Planning/Wholesale Metrics MPV.png" class="LargeImages">
+            </img>
+        </p>
+        <h3>Metric notes</h3>
+        <p>For plans with:</p>
+        <ul>
+            <li>
+                <p>wholesale lines - Sales, Sls and AUR renamed to Bookings, BK and ASP.</p>
+                <p>
+                    <img src="../../Resources/Images/Assortment Planning/Wholesale Lines Only Naming.png" class="LargeImages" />
+                </p>
+            </li>
+            <li>
+                <p>mixed wholesale and retail - Sales, Sls and AUT renamed to Sales/Bookings, Sls/Bk and AUR/ASP.</p>
+                <p>
+                    <img src="../../Resources/Images/Assortment Planning/Wholesale Lines Metric Renaming.png" class="LargeImages" />
+                </p>
+            </li>
+        </ul>
+        <h3>Editability</h3>
+        <ul>
+            <li>
+                <p>Discount %, At Once $/U, Cancel %, Cancelled $/U are all editable when the line is a wholesale line or have an underlying Cluster Set that is wholesale.</p>
+            </li>
+            <li>
+                <p>All the wholesale fields are non-editable if the line does not have any Wholesale Cluster Sets.</p>
+            </li>
+            <li>
+                <p>Cancel %, Cancelled $/U are non-editable after actualization begins.</p>
+            </li>
+        </ul>
+        <p>The <span class="Emphasis">Wholesale</span> check box is purely informational and indicates a line is wholesale.</p>
+        <h3>Calculations</h3>
+        <p>Amending:</p>
+        <ul>
+            <li>
+                <p>At Once $ recalculates At Once U and vice versa.</p>
+            </li>
+            <li>
+                <p>Cancel % recalculates Cancelled $ and Cancelled U</p>
+            </li>
+            <li>
+                <p>Cancelled $ recalculates Cancelled U and Cancelled %</p>
+            </li>
+            <li>
+                <p>Cancelled U recalculates Cancelled $ and Cancelled %</p>
+            </li>
+            <li>
+                <p>AUT recalculates Cancelled $</p>
+            </li>
+        </ul>
+        <p>Any amendment that affects Sales Units and/or Total Bookings recalculates Cancelled U and Cancelled %.</p>
         <h2>Metrics</h2>
         <ul>
             <li>

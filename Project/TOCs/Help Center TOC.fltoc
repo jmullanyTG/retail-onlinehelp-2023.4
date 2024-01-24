@@ -152,7 +152,7 @@
                 Link="/Content/Topics/Merchandise Financial Planning/Plan Sub Types.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
               <TocEntry
                 Title="[%=System.LinkedTitle%]"
-                Link="/Content/Topics/Merchandise Financial Planning/Including Wholesale In Channel Hierarchy.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+                Link="/Content/Topics/Merchandise Financial Planning/Including A Wholesale Channel In Hierarchy.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
               <TocEntry
                 Title="[%=System.LinkedTitle%]"
                 Link="/Content/Topics/Merchandise Financial Planning/Validating a Supply Chain.htm" />

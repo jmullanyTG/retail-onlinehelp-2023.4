@@ -32,9 +32,9 @@ While the construction code is very specific, the actual supplier constraint is 
                 <p>Supplier 2: (T-shirts, Dress-shirts, and Collar Shirts)</p>
             </li>
         </ul>
-        <p>Construction type can be material, machinery, time required to complete manufacture of required amount of items, and so on. Basically, something associated with the constraint that a supplier has in terms of the material, fabric or other factor related to the ability to actually run the production of the product and what limitations the supplier has.</p>
+        <p>Construction type can be based on any finite capacity such as material, machinery, time required to complete manufacture of required amount of items, and so on. Said another way, construction type is something associated with the constraint that a supplier has in terms of the material, fabric or other factor related to the ability to actually run the production of the product and what limitations the supplier has.</p>
         <p class="BasicNote">System policy <span class="Emphasis">Supplier Constraint: Construction Type</span> (Module: Order Manager) defines which Attribute to use for supplier constraint.</p>
-        <p>Should a product not have an Attribute associated with it then the macro, <span class="Emphasis">Apply Supplier Production Limitation</span>, available for Supplier orders in Order Manager will not function and supply will not be constrained. The macro requires an Attribute because if there is no Attribute associated with a construction type that can be constrained by that construction type, there's nothing to link to the particular macro and supply cannot be constrained.</p>
+        <p>Should a product not have an Attribute associated with it then macro, <span class="Emphasis">Apply Supplier Production Limitation</span>, available for Supplier orders in Order Manager will not be applied and supply will not be constrained. The macro requires a product’s Attribute to be associated with a construction type in order to constrain by that construction type. Without that association, there is no link to the particular macro and supply cannot be constrained.</p>
         <p class="BasicNote">The Attribute needs to be set prior to actually creating purchase orders.</p>
     </body>
 </html>
