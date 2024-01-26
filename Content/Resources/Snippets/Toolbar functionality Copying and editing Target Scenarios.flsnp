@@ -19,7 +19,6 @@
         <p class="Caution">We strongly advise against defining product hierarchies that extend to the style level or below, as this greatly diminishes system performance and over complicates the assortment planning process.</p>
         <h3>Calculate</h3>
         <p>Calculates the segment cluster details in the <span class="Emphasis">Target Worksheet</span> section based on the <span class="BodyWord">Target Data Selection</span> parameters and selections in the <span class="Emphasis">Target Segment Definitions</span> section. After the calculation process completes, the scenario status shows as <span class="Emphasis">Calculated</span> in the <span class="Emphasis">Target Data Selection</span> section, and full Comparison and Carryover data is shown in the <span class="Emphasis">Target Worksheet</span> section. The <span class="Emphasis">TY&#160;Act New</span> fields are set as defaults.</p>
-        <p>For more information on calculations for each field, see <MadCap:xref href="../../Topics/Assortment Planning/Target Worksheet.htm">Target Worksheet section</MadCap:xref>.</p>
         <p class="BasicNote">Generally, this process takes only a few seconds to complete. However, depending on the volume of data being queried and the complexity of the specified criteria, it could take up to a minute or more.</p>
         <p class="BasicNote">If <span class="Emphasis">Calculate</span> is clicked before segments have been defined for the scenario, the <span class="Emphasis">Target Worksheet</span> section refreshes but return no data.</p>
         <h3>Rationalize</h3>
@@ -28,7 +27,7 @@
         <p class="BasicNote">If Rationalize is clicked before segments have been defined for the scenario, the Segment Cluster Details section will refresh but return no recommended choice counts.</p>
         <h3>Smart Start</h3>
         <p>If Target Choice Counts is used within AP, scenarios can be used to create a foundation for assortment plans through a process called Smart Start.
-For more information, see <MadCap:xref href="../../Topics/Target Choice Count/Target Choice Count Smart Start.htm">Target Choice Count Smart Start</MadCap:xref>.</p>
+</p>
         <p>Selecting Smart Start in Target Choice Count generates the following:</p>
         <p>
             <img src="../Images/Target Choice Count/Smart Start Not Enabled.PNG" class="LargeImages" />
