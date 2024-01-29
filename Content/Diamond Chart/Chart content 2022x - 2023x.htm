@@ -1199,7 +1199,7 @@ When the URL is changed for the document ID, the cache of the image is cleared a
             </li>
         </ul>
         <h3>Target Choice Counts </h3>
-        <h4><a name="ROS"></a>ROS extrapolation updated to avoid crossing zero</h4>
+        <h4>ROS extrapolation updated to avoid crossing zero</h4>
         <p>Within Target Choice Count/Creation, previous functionality was to rationalize the comparison ROS values and make placeholder ROS recommendations to the point where additional recommendations are not mathematically justified. Beyond that point, if a user wished to add additional placeholders, the logic was to create a decreasing ROS slope to be applied against additional, user-requested recommendations. A function of the previous slope method was that the slope could reach or cross a zero (or negative) ROS.</p>
         <p>The logic used to create the extended slope for ROS values to be applied against additional placeholders has been updated in such a way that it will never reach or cross zero. This allows users to create additional placeholders and receive suggested ROS values for each placeholder, regardless of the number of additional placeholders being requested.</p>
         <p class="BasicNote">Creating a large amount of additional placeholders could result in very small ROS values for some placeholders. This is a function of a decreasing ROS slope.</p>
