@@ -676,7 +676,7 @@ EXEC dbo.usp_INIT_Promotion_All</MadCap:codeSnippetBody>
             <li>
                 <p>Target Choices By Update</p>
                 <p>
-                    <img src="../../Images/Upgrade Playbook Images/Target Choices By Update.png" class="LargeImages" />
+                    <img src="../../Resources/Images/Upgrade Playbook (Template) images/Target Choices By Update.png" class="LargeImages" />
                 </p>
             </li>
         </ol>
@@ -709,39 +709,148 @@ EXEC dbo.usp_INIT_Promotion_All</MadCap:codeSnippetBody>
                 <p><span class="Emphasis">(AL) (Weekly) Maintenance Rebuild Product Models in Batches</span> - Replaces (AL) (Weekly) Maintenance Rebuild Product Models in the weekly.</p>
             </li>
         </ol>
-        <h2>Services</h2>
-        <p class="BasicNote">Each quarterly release folder contains a version-specific configuration guide. The following is the most recent.</p>
+        <h2>2023.4</h2>
+        <h3>Update Script (2023.4.0.0_JEUpdate) </h3>
+        <h3>Views, Widget &amp; Collections</h3>
+        <p>Order Manager</p>
+        <ol>
+            <li>
+                <p>Supplier Capacity Report</p>
+            </li>
+        </ol>
+        <p>Supplier Manager</p>
+        <ol>
+            <li>
+                <p>Supplier Construction Type Capacity</p>
+            </li>
+        </ol>
+        <p>Site Manager</p>
+        <ol>
+            <li>
+                <p>Site Account Source Site Contribution</p>
+            </li>
+            <li>
+                <p>Site Account Customer Relations</p>
+            </li>
+        </ol>
+        <h3>New/Changed System Policies </h3>
+        <p>Assortment</p>
+        <ol>
+            <li>
+                <p><span class="Emphasis">Product Level Display</span>: Determines which fields to show in the Product Columns. 0 - Description, 1 - Code, 2 - Code and Description</p>
+            </li>
+        </ol>
+        <p>Financial Planning</p>
+        <ol>
+            <li>
+                <p><span class="Emphasis">DC Stock Include Pending</span>: Whether to reduce DC Available On Hand by Pending stock.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">DC Stock Include Reserved</span>: Whether to include Reserved stock in the EOP Units DC Split and DC Available On Hand metrics.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">Forecast Source</span>: Dictates which source of Forecast data to use - Inventory forecasts or aggregated level forecasts.  Level data should be chosen to expedite performance, but only if forecast jobs are set up to maintain hierarchy level data.</p>
+            </li>
+        </ol>
+        <p>Order Manager</p>
+        <ol>
+            <li>
+                <p><span class="Emphasis">Supplier Constraint: Bucket Type</span>: Defines which Bucket ID to use that represents the Time Period that will be used for Supplier Constraint.</p>
+            </li>
+            <li>
+                <p><span class="Emphasis">Supplier Constraint: Construction Type</span>: Defines which Attribute ID to use that represents the Construction Type Attribute that will be used for Supplier Constraint.</p>
+            </li>
+        </ol>
+        <p>Site Manager</p>
+        <ol>
+            <li>
+                <p><span class="Emphasis">Site Wholesale Account Distribution: ItemMaster Hierarchy ID</span>: ItemMaster Hierarchy ID to define what item level we want to manage DC to Account distribution, used by Wholesale Account Distribution.</p>
+            </li>
+        </ol>
+        <h3>New/Changed Job Manager Tasks</h3>
+        <p>Financial Planning</p>
+        <ol>
+            <li>
+                <p>(MFP) (All MFP Plans) Merchandise Financial Planning Forecast Task → This task will run a forecast for all MFP plans. This will run the same forecast parameters for all MFP master plans.</p>
+            </li>
+        </ol>
+        <p>LightGBM</p>
+        <ol>
+            <li>
+                <p>(DF) (Weekly) LightGBM Run Inference Process</p>
+            </li>
+            <li>
+                <p>(DF) (Monthly) LightGBM Run Train Process</p>
+            </li>
+            <li>
+                <p>(DF) (Monthly) MFP LightGBM Run Train Process</p>
+            </li>
+            <li>
+                <p>(DF) (Weekly) MFP LightGBM Run Inference Process</p>
+            </li>
+        </ol>
+        <p>Wholesales</p>
+        <ol>
+            <li>
+                <p>(WS) (Weekly) Generate Sales History from Customer Orders</p>
+            </li>
+        </ol>
+        <h2>Services Architecture &amp; Additional Configuration</h2>
+        <p class="BasicNote">Each release containing new architecture contains a version-specific configuration guide. The following is the most recent.</p>
         <p>
-            <img src="../../Resources/Images/Upgrade Playbook (Template) images/Untitled 42.png" class="LargeImages" />
+            <img src="../../Resources/Images/Upgrade Playbook (Template) images/Recommended Setup.png" class="LargeImages" />
         </p>
         <ol>
             <li>Uninstall TG JE Services</li>
             <li>Browse to installation folders and <strong>move</strong> the leftover files.
-					<ol><li>C:\inetpub\wwwroot\JustEnough.* →C:\JustEnough\backup\configs</li><li>C:\Program Files (x86)\JustEnough Software Inc\JustEnough Services\* →C:\JustEnough\backup\configs</li></ol><p><MadCap:codeSnippet><MadCap:codeSnippetCopyButton /><MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">#Powershell
-$sourceFolder_inetpub = "C:\inetpub\wwwroot"
-$sourceFolder_programfiles = "C:\Program Files (x86)\JustEnough Software Inc\JustEnough Services"
-$destinationFolder = "C:\JustEnough\backup\config"
+			<ol><li><p>C:\inetpub\wwwroot\JustEnough.* →C:\JustEnough\backup\configs</p></li><li><p>C:\Program Files (x86)\JustEnough Software Inc\JustEnough Services\* →C:\JustEnough\backup\configs</p></li></ol></li>
+            <p>
+                <MadCap:codeSnippet>
+                    <MadCap:codeSnippetCopyButton />
+                    <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">#Powershell
+						$sourceFolder_inetpub = "C:\inetpub\wwwroot"
+						$sourceFolder_programfiles = "C:\Program Files (x86)\JustEnough Software Inc\JustEnough Services"
+						$destinationFolder = "C:\JustEnough\backup\config"
 
-if (-not (Test-Path -Path $destinationFolder)) {
-    New-Item -ItemType Directory -Path $destinationFolder -Force | Out-Null
-}
+						if (-not (Test-Path -Path $destinationFolder)) {
+						New-Item -ItemType Directory -Path $destinationFolder -Force | Out-Null
+						}
 
-$folders = Get-ChildItem -Path $sourceFolder_inetpub -Directory -Recurse | Where-Object { $_.Name -like "JustEnough*" }
+						$folders = Get-ChildItem -Path $sourceFolder_inetpub -Directory -Recurse | Where-Object { $_.Name -like "JustEnough*" }
 
-foreach ($folder in $folders) {
-    $newPath = $folder.FullName.Replace($sourceFolder_inetpub, $destinationFolder)
-    Move-Item -Path $folder.FullName -Destination $newPath
-}
+						foreach ($folder in $folders) {
+						$newPath = $folder.FullName.Replace($sourceFolder_inetpub, $destinationFolder)
+						Move-Item -Path $folder.FullName -Destination $newPath
+						}
 
-$folders = $null
-$folders = Get-ChildItem -Path $sourceFolder_programfiles -Directory -Recurse 
+						$folders = $null
+						$folders = Get-ChildItem -Path $sourceFolder_programfiles -Directory -Recurse 
 
-foreach ($folder in $folders) {
-    $newPath = $folder.FullName.Replace($sourceFolder_programfiles, $destinationFolder)
-    Move-Item -Path $folder.FullName -Destination $newPath
-}</MadCap:codeSnippetBody></MadCap:codeSnippet></p></li>
+						foreach ($folder in $folders) {
+						$newPath = $folder.FullName.Replace($sourceFolder_programfiles, $destinationFolder)
+						Move-Item -Path $folder.FullName -Destination $newPath
+					}</MadCap:codeSnippetBody>
+                </MadCap:codeSnippet>
+            </p>
             <li>Install new services using the latest MSIs</li>
         </ol>
+        <h2>Configure Stock To Service</h2>
+        <p>To Configure the Stock to Service service, an additional file needs to be created/configured. If file does not exist created it, else edit the file to look like the example below: C:\inetpub\wwwroot\JustEnough.Config\ToolsgroupIndustryRoutingConfiguration.json.</p>
+        <MadCap:codeSnippet>
+            <MadCap:codeSnippetCopyButton />
+            <MadCap:codeSnippetBody MadCap:useLineNumbers="False" MadCap:lineNumberStart="1" MadCap:continue="False" xml:space="preserve">{
+  "CompanyName": {
+    "api/StockToService": {
+      "BaseAddress": "&lt;StockToService.BaseAddress&gt;",
+      "Timeout": "00:01:00",
+      "ApiKey": "&lt;StockToService.ApiKey&gt;"
+    }
+  }
+}</MadCap:codeSnippetBody>
+        </MadCap:codeSnippet>
+        <p>CompanyName → Same as company name used when installing JustEnough Services</p>
+        <p>Please reach out to SO99+ installation team for an API key for the &lt;StockToService.BaseAddress&gt; and &lt;StockToService.ApiKey&gt; values.</p>
+        <p>ps: After changing any configuration it is recommended to restart IIS, compute and Scheduler services.</p>
         <h2>Views, UIL &amp; Plugins</h2>
         <p class="BasicNote">Each quarterly release has all the most recent views included, if updating past a quarterly release, only the latest CU is needed as it will have all the changes since the quarterly</p>
         <p class="Caution">Export and backup all views, widgets and ViewCollectionSets before importing the new ones, these objects will be replaced based on UUIDs (synced with UUID Alignment scripts) </p>
