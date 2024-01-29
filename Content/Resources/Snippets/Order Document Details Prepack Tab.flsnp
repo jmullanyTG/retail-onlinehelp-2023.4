@@ -3,7 +3,6 @@
     <head>
     </head>
     <body>
-        <h1>Order Document details – Prepack tab</h1>
         <p>The <span class="Emphasis">Prepack tab</span> allows users to further more order line details by allocating the units by size determined in Break By Size into pre-pack configurations defined in the <span class="Emphasis">Variant Manager</span> module. In the <span class="Emphasis">Prepack</span> tab, users can define a number of constraints to help guide the optimization process, including the percentage split between prepacks and singles.</p>
         <p>
             <img src="../../Resources/Images/Order Manager/Order Document Details Prepack.png" class="LargeImages" />
