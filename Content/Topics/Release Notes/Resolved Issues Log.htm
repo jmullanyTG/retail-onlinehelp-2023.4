@@ -217,7 +217,7 @@
                     <td class="TableStyle-standard-BodyE-Column2-Body1">&#160;</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
                         <p>Reported Behavior</p>
-                        <p>Users were getting an error in  Target Choice Count  when when rationalizing a Target Scenario</p>
+                        <p>Users were getting an error in  Target Choice Count  when rationalizing a Target Scenario</p>
                         <p>Steps to Reproduce</p>
                         <p>Go to Plan &gt; Target Choice Count &gt; Choose Scenario Name &gt; Click on Edit &gt; Rationalize</p>
                         <p>Users reported that this is happening when they had the "Use Collection for Intra-Style Curve" box checked. The error was not happening when this option is unchecked.</p>
@@ -229,8 +229,10 @@
                     <td class="TableStyle-standard-BodyE-Column1-Body1">External Bug</td>
                     <td class="TableStyle-standard-BodyE-Column2-Body1">v2023.3.1.0</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
-                        <p>Reported BehaviorWhen executing (clicking) Smart Start against a rationalized scenario in Target Creation, an error is returned and the Smart Smart is not completed.</p>
-                        <p>Updated BehaviorA rationalized scenario can be successfully Smart Started without error.</p>
+                        <p>Reported Behavior</p>
+                        <p>When executing (clicking) Smart Start against a rationalized scenario in Target Creation, an error is returned and the Smart Start is not completed.</p>
+                        <p>Updated Behavior</p>
+                        <p>A rationalized scenario can be successfully Smart Started without error.</p>
                     </td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
@@ -241,7 +243,22 @@
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
                         <p>Reported Issue</p>
                         <p>This ticket address an issue that occurs when a value is applied to the  Max # of Flow Periods  using the Multiple Change dialog in Assortment Receipt Plan Constraints, the value appears to be incorrectly applied across all selected Placeholders,</p>
-                        <p>Reproduction Steps</p>Go to Assortment Planning &gt; Collection ViewOpen a Collection w/ multiple PHsRemove  Placeholder Code  and  Placeholder Desc  from the Row Area of the gridPerform Multiple Changes on  Max # of Flow Periods  for all PHs and enter a value.</td>
+                        <p>Reproduction Steps</p>
+                        <ul>
+                            <li>
+                                <p>Go to Assortment Planning &gt; Collection View</p>
+                            </li>
+                            <li>
+                                <p>Open a Collection with multiple PHs. </p>
+                            </li>
+                            <li>
+                                <p>Remove  Placeholder Code  and  Placeholder Desc  from the Row Area of the grid. </p>
+                            </li>
+                            <li>
+                                <p>Perform Multiple Changes on  Max # of Flow Periods  for all PHs and enter a value.</p>
+                            </li>
+                        </ul>
+                    </td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Assortment</td>
@@ -298,7 +315,7 @@
                     <td class="TableStyle-standard-BodyE-Column2-Body1">&#160;</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
                         <p>Reported Issue</p>
-                        <p>In Attribute Management, saving a Lookup Description attribute value would sometimes trigger a truncation error .</p>
+                        <p>In Attribute Management, saving a Lookup Description attribute value would sometimes trigger a truncation error.</p>
                         <p>Resolution</p>
                         <p>A temp table had to modified to align with allowed value character lengths.</p>
                     </td>
@@ -346,8 +363,10 @@
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Support</td>
                     <td class="TableStyle-standard-BodyE-Column2-Body1">v2023.1.3.0, v2022.4.8.0, v2023.2.2.0, v2023.3.1.0</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
-                        <p>Reported BehaviorWhen a specific forecast method has been chosen and locked as the selected method, there are instances when the UI displays a different forecast method as the winning/chosen forecast model.</p>
-                        <p>Updated BehaviorAny Forecast lock applied for a particular method at Inventory is respected and held.</p>
+                        <p>Reported Behavior</p>
+                        <p>When a specific forecast method has been chosen and locked as the selected method, there are instances when the UI displays a different forecast method as the winning/chosen forecast model.</p>
+                        <p>Updated Behavior</p>
+                        <p>Any Forecast lock applied for a particular method at Inventory is respected and held.</p>
                     </td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
@@ -356,8 +375,8 @@
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Support</td>
                     <td class="TableStyle-standard-BodyE-Column2-Body1">&#160;</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
-                        <p>Reported Behavior:</p>
-                        <p>When receipts were changed in the total company Dept branch, the EOP in the snapshot changed in the last week (week 53 for example). Further, EOP, COGS, and GAFS values for the very last period in the snapshot were not correct (e.g. take a snapshot right now of a plan; without changes, load the plan and the new snapshot side by side; see these values do not match).</p>
+                        <p>Reported Behavior</p>
+                        <p>When receipts were changed in the total company Dept branch, the EOP in the snapshot changed in the last week (week 53 for example). Further, EOP, COGS, and GAFS values for the very last period in the snapshot were not correct (e.g. take a snapshot right now of a plan, without changes, load the plan and the new snapshot side by side; see these values do not match).</p>
                         <p>Updated Behavior:</p>
                         <p>The change in receipts for the total company will no longer affect the EOP in the snapshot in the last week</p>
                     </td>
@@ -377,8 +396,10 @@
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Performance</td>
                     <td class="TableStyle-standard-BodyE-Column2-Body1"> v2023.3.2.0</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
-                        <p>Reported Behavior:Long running cell update post after changing Shrink on an imported HRDM plan</p>
-                        <p>Updated Behavior:This has been addressed. Source of issue was specific to the HRDM plan type only. No issues observed with cell update and maintenance.</p>
+                        <p>Reported Behavior</p>
+                        <p>Long running cell update post after changing Shrink on an imported HRDM plan</p>
+                        <p>Updated Behavior</p>
+                        <p>This has been addressed. Source of issue was specific to the HRDM plan type only. No issues observed with cell update and maintenance.</p>
                     </td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
@@ -396,7 +417,39 @@
                     <td class="TableStyle-standard-BodyE-Column1-Body1">External Bug</td>
                     <td class="TableStyle-standard-BodyE-Column2-Body1">&#160;</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
-                        <p>Reported Behavior &amp; Steps to Verify</p>In Order Manager,Distribution Tab,All Items,Future Recommended OrdersOK.Under the Order Header, there is a checkbox to choose columns. &gt; Add the column TotalInboundOrderQuantity.<p>This column causes the query to run below.</p><p>Updated BehaviorThis procedure has been performance tuned to exclude inactive inventories, which improves run times.</p></td>
+                        <p>Reported Behavior &amp; Steps to Verify</p>
+                        <ul>
+                            <li>
+                                <p>
+In Order Manager</p>
+                            </li>
+                            <li>
+                                <p>
+Distribution Tab</p>
+                            </li>
+                            <li>
+                                <p>All Items</p>
+                            </li>
+                            <li>
+                                <p>Future Recommended Orders</p>
+                            </li>
+                            <li>
+                                <p> 
+OK.</p>
+                            </li>
+                            <li>
+                                <p> 
+Under the Order Header, there is a checkbox to choose columns. &gt; Add the column TotalInboundOrderQuantity. 
+</p>
+                            </li>
+                        </ul>
+                        <p>When in Order Manager, when generating large orders (such as all items), we are triggering long query alerts. 
+</p>
+                        <p>Updated Behavior
+</p>
+                        <p>This procedure has been performance tuned to exclude inactive inventories, which improves run times.
+</p>
+                    </td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Price Manager</td>
@@ -423,7 +476,35 @@
                     <td class="TableStyle-standard-BodyE-Column1-Body1">External Bug</td>
                     <td class="TableStyle-standard-BodyE-Column2-Body1">v2021.4.12.0, v2022.4.9.0</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
-                        <p>Reported Behavior &amp; Steps to Verify</p>Navigate to Views-&gt;Size Curve ManagerCreate NewEnter Size Range Name that will exceed NVARCHAR(128)SaveNote that there is no warning and you are able to save. Review the name/description and note that they have been truncated.<p>Updated Behavior</p>SizeRangeName and SizeCurveOptionName now restrict entering more than 128 characters in UI. Entering more than 128 characters will display invalid input and wont let user tab out untill the extra character is removedSizeRangeDescription and SizeCurveOptionDescription now restrict entering more than 256 characters in UI. Typing more than 256 characters will display invalid input and wont let user tab out until the extra character is removed.<p>Note: Directly copy pasting more than 128 or 256 characters and clicking on save prior to tab out will truncate the extra characters and save</p></td>
+                        <p>Reported Behavior &amp; Steps to Verify</p>
+                        <ul>
+                            <li>
+                                <p>Navigate to Views-&gt;Size Curve Manager</p>
+                            </li>
+                            <li>
+                                <p>
+
+Create New</p>
+                            </li>
+                            <li>
+                                <p>
+
+Enter Size Range Name that will exceed NVARCHAR(128)</p>
+                            </li>
+                            <li>
+                                <p>
+
+Save</p>
+                            </li>
+                            <li>
+                                <p>
+
+Note that there is no warning and you are able to save. Review the name/description and note that they have been truncated.</p>
+                            </li>
+                        </ul>
+                        <p>Updated Behavior</p>
+                        <ol> <li><p>SizeRangeName and SizeCurveOptionName now restrict entering more than 128 characters in UI. Entering more than 128 characters will display invalid input and wont let user tab out untill the extra character is removed</p></li><li><p>SizeRangeDescription and SizeCurveOptionDescription now restrict entering more than 256 characters in UI. Typing more than 256 characters will display invalid input and wont let user tab out until the extra character is removed. </p><p>Directly copy pasting more than 128 or 256 characters and clicking on save prior to tab out will truncate the extra characters and save</p></li></ol>
+                    </td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Target Choice Counts</td>
@@ -432,8 +513,8 @@
                     <td class="TableStyle-standard-BodyE-Column2-Body1">&#160;</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
                         <p>Reported Behavior</p>
-                        <p>If a user right clicks in the Target Worksheet and selects “Open” an error message pops up and does not allow the user to open the view in excel</p>
-                        <p>Steps to Verify</p>Create a target creation scenarioCreate updatesCalculate the scenarioRight click into the target worksheet and select “Open”<p>Updated Behavior</p><p>The Target Worksheet is able to open in Excel.</p></td>
+                        <p>If a user right clicks in the Target Worksheet and selects “Open” an error message pops up and does not allow the user to open the view in MS&#160;Excel.</p>
+                        <p>Steps to Verify</p>Create a target creation scenarioCreate updatesCalculate the scenarioRight click into the target worksheet and select “Open”<p>Updated Behavior</p><p>The Target Worksheet is able to open in MS Excel.</p></td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Target Choice Counts</td>
@@ -453,8 +534,10 @@
                     <td class="TableStyle-standard-BodyE-Column1-Body1">Support</td>
                     <td class="TableStyle-standard-BodyE-Column2-Body1">&#160;</td>
                     <td class="TableStyle-standard-BodyD-Column1-Body1">
-                        <p>Reported BehaviorAn error that is returned when trying to rename custom metadata views into the standard table.&#160;</p>
-                        <p>Updated BehaviorRename of custom metadata is completed without error.</p>
+                        <p>Reported Behavior</p>
+                        <p>An error that is returned when trying to rename custom metadata views into the standard table.&#160;</p>
+                        <p>Updated Behavior</p>
+                        <p>Rename of custom metadata is completed without error.</p>
                     </td>
                 </tr>
                 <tr class="TableStyle-standard-Body-Body1">
